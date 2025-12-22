@@ -8,24 +8,24 @@ export default [
     alt: "id-home-logo",
     src: bcUrl,
     width: 257,
-    hight: 173,
+    height: 173,
   },
   {
     alt: "ik-kitchen-logo",
     src: ikUrl,
     width: 253,
-    hight: 85,
+    height: 85,
   },
   {
     alt: "al-azm-logo",
     src: azUrl,
     width: 257,
-    hight: 173,
+    height: 173,
   },
   {
     alt: "",
     src: idUrl,
     width: 257,
-    hight: 173,
+    height: 173,
   },
 ];
