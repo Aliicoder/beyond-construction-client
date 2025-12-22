@@ -41,7 +41,7 @@ const Hero = () => {
             width={24}
             height={24}
             className="object-contain"
-            src={upLeftArrowUrl.src}
+            src={upLeftArrowUrl}
             alt="up-left-arrow"
           />
         </button>
