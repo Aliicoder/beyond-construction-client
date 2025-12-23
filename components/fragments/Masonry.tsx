@@ -9,7 +9,7 @@ const Masonry = () => {
       <div
         dir="ltr"
         className={clsx(
-          "gap-8 px-4 columns-2 md:gap-16 md:columns-3",
+          "gap-8 px-4 columns-2 md:gap-16 md:columns-3 overflow-hidden pb-[30px]",
           "md:p-[30px] max-h-[1028px]"
         )}
       >
