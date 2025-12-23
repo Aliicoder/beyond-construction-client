@@ -39,7 +39,7 @@ export default [
     src: rec04.src,
     alt: "Prototype-4",
     heights: {
-      small: 389,
+      small: 380,
       large: 295,
     },
     className: "",

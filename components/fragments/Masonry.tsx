@@ -1,6 +1,5 @@
 "use client";
 import prototypes from "@/constants/prototypes";
-import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import clsx from "clsx";
 
 const Masonry = () => {
