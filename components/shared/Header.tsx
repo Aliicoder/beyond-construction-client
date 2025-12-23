@@ -35,7 +35,7 @@ const Header = () => {
         >
           {navs.map((nav) => (
             <li key={nav.name}>
-              <Link href={nav.href}>{nav.name}</Link>
+              <Link href={""}>{nav.name}</Link>
             </li>
           ))}
         </ul>
