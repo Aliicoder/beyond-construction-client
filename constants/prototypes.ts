@@ -13,36 +13,32 @@ export default [
       small: 269,
       large: 366,
     },
-    onSmallScreenHide: false,
   },
   {
     src: rec02.src,
     alt: "Prototype-2",
     heights: {
-      small: 204,
+      small: 150,
       large: 513,
     },
-    onSmallScreenHide: false,
   },
 
   {
     src: rec03.src,
     alt: "Prototype-3",
     heights: {
-      small: 176,
+      small: 266,
       large: 581,
     },
-    onSmallScreenHide: false,
   },
 
   {
     src: rec04.src,
     alt: "Prototype-4",
     heights: {
-      small: 389,
+      small: 189,
       large: 295,
     },
-    onSmallScreenHide: false,
   },
   {
     src: rec05.src,
@@ -51,7 +47,6 @@ export default [
       small: 297,
       large: 537,
     },
-    onSmallScreenHide: false,
   },
 
   {
@@ -61,6 +56,5 @@ export default [
       small: 200,
       large: 347,
     },
-    onSmallScreenHide: true,
   },
 ];
