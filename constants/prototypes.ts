@@ -58,7 +58,7 @@ export default [
     src: rec06.src,
     alt: "Prototype-6",
     heights: {
-      small: 0,
+      small: 200,
       large: 347,
     },
     onSmallScreenHide: true,
