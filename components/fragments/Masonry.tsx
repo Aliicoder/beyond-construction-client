@@ -2,10 +2,8 @@
 import prototypes from "@/constants/prototypes";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import clsx from "clsx";
-import Image from "next/image";
 
 const Masonry = () => {
-  let breakpoint = useTailwindBreakpoint();
   return (
     <div className="container mx-auto flex justify-center">
       <div
@@ -21,17 +19,22 @@ const Masonry = () => {
             className={clsx(
               "break-inside-avoid mb-8",
               className,
-              "md:mb-16 md:block!"
+              "md:mb-16 md:block"
             )}
+            style={
+              {
+                "--small-height": `${heights.small}px`,
+                "--large-height": `${heights.large}px`,
+              } as React.CSSProperties
+            }
           >
             <img
               src={src}
               alt={alt}
-              style={{
-                height: breakpoint === "lg" ? heights.large : heights.small,
-                width: "100%",
-              }}
-              className="rounded-md object-cover"
+              className={clsx(
+                `w-full h-[var(--small-height)] rounded-md object-cover`,
+                `md:w-full md:h-[var(--large-height)]`
+              )}
             />
           </div>
         ))}
