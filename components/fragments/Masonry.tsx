@@ -17,19 +17,17 @@ const Masonry = () => {
       >
         {prototypes.map(({ src, alt, heights, onSmallScreenHide }, index) =>
           breakpoint === "sm" && onSmallScreenHide ? null : (
-            <img
-              key={index}
-              src={src}
-              alt={alt}
-              style={{
-                height: breakpoint == "lg" ? heights.large : heights.small,
-                width: "100%",
-              }}
-              className={clsx(
-                `break-inside-avoid rounded-md object-cover outline outline-black mb-8`,
-                "md:mb-16"
-              )}
-            />
+            <div key={index} className="break-inside-avoid mb-8 md:mb-16">
+              <img
+                src={src}
+                alt={alt}
+                style={{
+                  height: breakpoint === "lg" ? heights.large : heights.small,
+                  width: "100%",
+                }}
+                className="rounded-md object-cover outline outline-black block"
+              />
+            </div>
           )
         )}
       </div>
