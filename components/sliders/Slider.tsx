@@ -1,9 +1,7 @@
-import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface SliderProps {
-  direction?: number;
   data: {
     alt: string;
     src: StaticImageData;
@@ -12,55 +10,34 @@ interface SliderProps {
   }[];
   className?: string;
   rtl?: boolean;
-  scales: {
-    large: { width: number; height: number };
-    medium: { width: number; height: number };
-    small: { width: number; height: number };
-  };
 }
-const Slider = ({
-  direction = 1,
-  data,
-  className,
-  scales,
-  rtl,
-}: SliderProps) => {
+const Slider = ({ data }: SliderProps) => {
   return (
     <div
-      className={cn("slider ", className)}
+      className="container mx-auto slider mb-[20px] overflow-hidden"
       style={
         {
+          "--width": "150px",
+          "--height": "200px",
           "--quntity": data.length,
-          "--width-large": `${scales.large.width}px`,
-          "--height-large": `${scales.large.height}px`,
-          "--width-medium": `${scales.medium.width}px`,
-          "--height-medium": `${scales.medium.height}px`,
-          "--width-small": `${scales.small.width}px`,
-          "--height-small": `${scales.small.height}px`,
         } as React.CSSProperties
       }
     >
-      <div className="list">
-        {data.map((partenr, index) => (
-          <div
+      <ul className="list">
+        {data.map(({ alt, src, width, height }, index) => (
+          <li
             style={
               {
                 "--index": index,
-                "--direction": direction,
               } as React.CSSProperties
             }
             key={index}
-            className={cn(rtl ? "item-rtl" : "item-ltr")}
+            className="item"
           >
-            <Image
-              src={partenr.src}
-              alt={partenr.alt}
-              width={partenr.width}
-              height={partenr.height}
-            />
-          </div>
+            <img className="size-full object-contain" src={src.src} alt={alt} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

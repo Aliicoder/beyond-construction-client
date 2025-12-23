@@ -4,7 +4,7 @@ import Masonry from "@/components/fragments/Masonry";
 const Prototypes = () => {
   return (
     <section>
-      <section className="py-[90px]">
+      <section className="pb-[90px]">
         <Title text="نماذج من عقاراتنا" />
       </section>
 

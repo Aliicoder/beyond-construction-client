@@ -147,67 +147,41 @@
 
 .slider {
   overflow: hidden;
+}
+.slider .list {
+  width: 100%;
   position: relative;
-  & .list {
-    width: 100%;
-    height: var(--height);
-    position: relative;
-    min-width: calc(var(--width) * var(--quntity));
-    .item-rtl {
-      max-width: var(--width);
-      height: 100%;
-      position: absolute;
-      left: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: autoScrollRtl 20s linear infinite;
-      animation-delay: calc((20s / var(--quntity)) * var(--index));
-    }
-    .item-ltr {
-      max-width: var(--width);
-      height: 100%;
-      position: absolute;
-      right: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: autoScrollLtr 20s linear infinite;
-      animation-delay: calc((20s / var(--quntity)) * var(--index));
-    }
-  }
-  & {
-    @media (width >= 0px) {
-      --height: var(--height-small) !important;
-      --width: var(--width-small) !important;
-    }
-
-    @media (width >= 768px) {
-      --height: var(--height-medium) !important;
-      --width: var(--width-medium) !important;
-    }
-
-    @media (width >= 1200px) {
-      --height: var(--height-large) !important;
-      --width: var(--width-large) !important;
-    }
+  height: var(--height);
+  min-width: calc(var(--width) * var(--quntity));
+}
+.slider .item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: autoScroll 20s linear infinite;
+  animation-delay: calc((20s / var(--quntity)) * var(--index));
+}
+.slider .item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+@media (width >= 768px) {
+  .slider {
+    --height: 400px !important;
+    --width: 200px !important;
   }
 }
 
-@keyframes autoScrollRtl {
+@keyframes autoScroll {
   from {
     left: 100%;
   }
   to {
     left: calc(var(--width) * -1);
-  }
-}
-
-@keyframes autoScrollLtr {
-  from {
-    right: 100%;
-  }
-  to {
-    right: calc(var(--width) * -1);
   }
 }
