@@ -9,52 +9,58 @@ export default [
   {
     src: rec01.src,
     alt: "Prototype-1",
-    height: {
+    heights: {
       small: 269,
       large: 366,
     },
+    onSmallScreenHide: false,
   },
   {
     src: rec02.src,
     alt: "Prototype-2",
-    height: {
+    heights: {
       small: 204,
       large: 513,
     },
+    onSmallScreenHide: false,
   },
 
   {
     src: rec03.src,
     alt: "Prototype-3",
-    height: {
+    heights: {
       small: 176,
       large: 581,
     },
+    onSmallScreenHide: false,
   },
 
   {
     src: rec04.src,
     alt: "Prototype-4",
-    height: {
+    heights: {
       small: 389,
       large: 295,
     },
+    onSmallScreenHide: false,
   },
   {
     src: rec05.src,
     alt: "Prototype-5",
-    height: {
+    heights: {
       small: 297,
       large: 537,
     },
+    onSmallScreenHide: false,
   },
 
   {
     src: rec06.src,
     alt: "Prototype-6",
-    height: {
+    heights: {
       small: 0,
       large: 347,
     },
+    onSmallScreenHide: true,
   },
 ];

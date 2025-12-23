@@ -9,29 +9,29 @@ const Masonry = () => {
   return (
     <div className="container mx-auto flex justify-center">
       <div
+        dir="ltr"
         className={clsx(
           "gap-8 px-4 columns-2 md:gap-16 md:columns-3",
-          "md:px-[30px]"
+          "md:p-[30px]"
         )}
       >
-        {prototypes
-          .filter((p) => !(breakpoint === "sm" && p.height.small === 0))
-          .map((prototype, index) => (
-            <div key={index} className="break-inside-avoid mb-8 md:mb-16">
-              <img
-                src={prototype.src}
-                alt={prototype.alt}
-                style={{
-                  height:
-                    breakpoint === "lg"
-                      ? prototype.height.large
-                      : prototype.height.small,
-                  width: "100%",
-                }}
-                className="rounded-md object-cover outline outline-black block"
-              />
-            </div>
-          ))}
+        {prototypes.map(({ src, alt, heights, onSmallScreenHide }, index) =>
+          breakpoint === "sm" && onSmallScreenHide ? null : (
+            <img
+              key={index}
+              src={src}
+              alt={alt}
+              style={{
+                height: breakpoint == "lg" ? heights.large : heights.small,
+                width: "100%",
+              }}
+              className={clsx(
+                `break-inside-avoid rounded-md object-cover outline outline-black mb-8`,
+                "md:mb-16"
+              )}
+            />
+          )
+        )}
       </div>
     </div>
   );
