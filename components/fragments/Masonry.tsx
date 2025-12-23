@@ -13,26 +13,29 @@ const Masonry = () => {
         className="gap-8 px-[30px] columns-2 md:gap-16 md:columns-3 "
       >
         {prototypes.map((prototype, index) => (
-          <img
+          <div
             key={index}
-            src={prototype.src}
-            alt={prototype.alt}
+            className="break-inside-avoid mb-8 md:mb-16"
             style={{
-              height:
-                breakpoint == "lg"
-                  ? prototype.height.large
-                  : prototype.height.small,
-              width: "100%",
               display:
-                breakpoint == "sm" && prototype.height.small == 0
+                breakpoint == "sm" && prototype.height.small === 0
                   ? "none"
                   : "block",
             }}
-            className={clsx(
-              `break-inside-avoid rounded-md object-cover outline outline-black mb-8`,
-              "md:mb-16"
-            )}
-          />
+          >
+            <img
+              src={prototype.src}
+              alt={prototype.alt}
+              style={{
+                height:
+                  breakpoint === "lg"
+                    ? prototype.height.large
+                    : prototype.height.small,
+                width: "100%",
+              }}
+              className="rounded-md object-cover outline outline-black block"
+            />
+          </div>
         ))}
       </div>
     </div>

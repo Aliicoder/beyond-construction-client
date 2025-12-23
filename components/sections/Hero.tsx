@@ -1,5 +1,5 @@
 import Image from "next/image";
-import upLeftArrowUrl from "@/assets/icons/up-left-arrow.png";
+import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
 import patternUrl from "@/assets/patterns/pattern.png";
 import heroImg from "@/assets/images/hero-lg.jpg";
 import clsx from "clsx";
@@ -31,17 +31,17 @@ const Hero = () => {
         </h1>
         <button
           className={clsx(
-            "z-10 mt-4 gap-[20px] px-6 py-4 flex justify-between bg-white text-black outline-1 outline-black rounded-xs",
+            "z-10 mt-4 gap-[20px] px-6 py-4 flex justify-between items-center bg-white text-black outline-1 outline-black rounded-xs",
             "hover:scale-95 cursor-pointer transition-all",
             "md:text-2xl md:w-fit"
           )}
         >
           تواصل معنا
           <Image
-            width={24}
-            height={24}
-            className="object-contain"
-            src={upLeftArrowUrl}
+            width={10}
+            height={10}
+            className="object-contain md:w-[14px] md:h-[14px]"
+            src={leftUpArrowPath}
             alt="up-left-arrow"
           />
         </button>
