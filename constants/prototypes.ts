@@ -13,32 +13,36 @@ export default [
       small: 269,
       large: 366,
     },
+    className: "",
   },
   {
     src: rec02.src,
     alt: "Prototype-2",
     heights: {
-      small: 150,
+      small: 204,
       large: 513,
     },
+    className: "",
   },
 
   {
     src: rec03.src,
     alt: "Prototype-3",
     heights: {
-      small: 266,
+      small: 176,
       large: 581,
     },
+    className: "",
   },
 
   {
     src: rec04.src,
     alt: "Prototype-4",
     heights: {
-      small: 189,
+      small: 389,
       large: 295,
     },
+    className: "",
   },
   {
     src: rec05.src,
@@ -47,14 +51,16 @@ export default [
       small: 297,
       large: 537,
     },
+    className: "",
   },
 
   {
     src: rec06.src,
     alt: "Prototype-6",
     heights: {
-      small: 200,
+      small: 0,
       large: 347,
     },
+    className: "hidden",
   },
 ];

@@ -15,8 +15,15 @@ const Masonry = () => {
           "md:p-[30px]"
         )}
       >
-        {prototypes.map(({ src, alt, heights }, index) => (
-          <div key={index} className="break-inside-avoid mb-8 md:mb-16">
+        {prototypes.map(({ src, alt, heights, className }, index) => (
+          <div
+            key={index}
+            className={clsx(
+              "break-inside-avoid mb-8",
+              className,
+              "md:mb-16 md:block!"
+            )}
+          >
             <img
               src={src}
               alt={alt}
@@ -24,7 +31,7 @@ const Masonry = () => {
                 height: breakpoint === "lg" ? heights.large : heights.small,
                 width: "100%",
               }}
-              className="rounded-md object-cover outline outline-black block"
+              className="rounded-md object-cover"
             />
           </div>
         ))}
