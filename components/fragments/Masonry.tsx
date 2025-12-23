@@ -9,8 +9,10 @@ const Masonry = () => {
   return (
     <div className="container mx-auto flex justify-center">
       <div
-        dir="ltr"
-        className="gap-8 px-[30px] columns-2 md:gap-16 md:columns-3 "
+        className={clsx(
+          "gap-8 px-4 columns-2 md:gap-16 md:columns-3",
+          "md:px-[30px]"
+        )}
       >
         {prototypes
           .filter((p) => !(breakpoint === "sm" && p.height.small === 0))
