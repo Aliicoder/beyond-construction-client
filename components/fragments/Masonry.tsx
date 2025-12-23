@@ -31,7 +31,7 @@ const Masonry = () => {
               src={src}
               alt={alt}
               className={clsx(
-                `w-full h-[var(--small-height)] rounded-md object-cover outline-1 outline-black`,
+                `w-full h-[var(--small-height)] rounded-md object-cover border border-black`,
                 `md:w-full md:h-[var(--large-height)]`
               )}
             />
