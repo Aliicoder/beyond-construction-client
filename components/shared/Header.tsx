@@ -1,43 +1,32 @@
 import clsx from "clsx";
-import Link from "next/link";
-import burgerMenu from "@/assets/icons/burger-menu.png";
 import Image from "next/image";
-import navs from "@/constants/navs";
+import BurgerMenu from "../fragments/BurgerMenu";
+import NavBar from "../fragments/NavBar";
 
 const Header = () => {
   return (
     <div
       className={clsx(
-        "h-[85px] outline-[1px] outline-black bg-white",
+        "h-[85px] outline outline-black bg-white",
         "md:h-[130px]"
       )}
     >
-      <div className="container mx-auto px-[30px] h-full flex justify-between items-center">
-        <Image
-          width={24}
-          height={24}
-          className={clsx("md:hidden")}
-          src={burgerMenu}
-          alt="company logo"
-        />
+      <div className="container mx-auto px-8 h-full flex justify-between items-center">
+        <BurgerMenu />
         <Image
           width={144}
           height={42}
           className={clsx("md:w-[164px] md:h-[48px]")}
           src="/logo.png"
-          alt="company logo"
+          alt="company-logo"
         />
         <ul
           className={clsx(
-            "gap-[60px] hidden flex-row items-center text-lg",
+            "gap-12 hidden flex-row items-center text-lg",
             "md:flex"
           )}
         >
-          {navs.map((nav) => (
-            <li key={nav.name}>
-              <Link href={""}>{nav.name}</Link>
-            </li>
-          ))}
+          <NavBar />
         </ul>
       </div>
     </div>

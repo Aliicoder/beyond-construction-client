@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 const Masonry = () => {
   return (
-    <div className="container mx-auto flex justify-center">
+    <div className="flex justify-center">
       <div
         dir="ltr"
         className={clsx(

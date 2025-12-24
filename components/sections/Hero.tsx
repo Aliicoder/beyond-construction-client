@@ -3,6 +3,7 @@ import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
 import patternUrl from "@/assets/patterns/pattern.png";
 import heroImg from "@/assets/images/hero-lg.jpg";
 import clsx from "clsx";
+import Button from "@/components/buttons/FirstBtn";
 const Hero = () => {
   return (
     <div className="flex flex-col">
@@ -17,34 +18,31 @@ const Hero = () => {
       />
       <div
         className={clsx(
-          "relative container mx-auto px-[30px] py-[60px] flex flex-col gap-[30px] bg-first outline-1 outline-black rounded-xs text-white overflow-hidden",
+          "relative container mx-auto px-8 py-12 flex flex-col gap-8 outline-1 rounded-xs overflow-hidden",
+          "text-white outline-black bg-first ",
           "md:mt-[-300px] md:p-[100px]"
         )}
       >
-        <h2 className={clsx("z-10 text-2xl", "md:text-6xl")}>
+        <h2 className={clsx("z-10 text-lg", "md:text-4xl")}>
           شركة ماوراء البناء العقارية
         </h2>
-        <h1 className={clsx("z-10 max-w-[725px] ", "md:text-2xl")}>
+        <h1 className={clsx("z-10 max-w-[725px] text-sm ", "md:text-lg")}>
           ذوي الخبرة والاختصاص في المجال العقاري، حيث ولدت فكرة إنشاء الشركة من
           خلال دراسة السوق العقاري في المملكة العربية السعودية وتلبية الاحتياجات
           التي تساعد في تطوير النشاط العقاري.
         </h1>
-        <button
-          className={clsx(
-            "z-10 mt-4 gap-[20px] px-6 py-4 flex justify-between items-center bg-white text-black outline-1 outline-black rounded-xs",
-            "hover:scale-95 cursor-pointer transition-all",
-            "md:text-2xl md:w-fit"
-          )}
-        >
-          تواصل معنا
-          <Image
-            width={10}
-            height={10}
-            className="object-contain md:w-[14px] md:h-[14px]"
-            src={leftUpArrowPath}
-            alt="up-left-arrow"
-          />
-        </button>
+        <Button
+          text="تواصل معنا"
+          icon={
+            <Image
+              width={10}
+              height={10}
+              className="object-contain md:w-[14px] md:h-[14px]"
+              src={leftUpArrowPath}
+              alt="up-left-arrow"
+            />
+          }
+        />
         <Image
           width={215}
           height={197}

@@ -1,7 +1,7 @@
 "use client";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
-import crossIcon from "@/assets/icons/cross.png";
-import patternUrl from "@/assets/patterns/pattern.png";
+import crossIconPath from "@/assets/icons/cross.png";
+import patternPath from "@/assets/patterns/pattern.png";
 import clsx from "clsx";
 import Image from "next/image";
 interface ServiceProps {
@@ -26,19 +26,19 @@ const Service = ({
   let isEven = index % 2 === 0;
 
   return (
-    <div className="p-4 w-full md:w-1/2 ">
+    <div className="p-4 w-full md:w-1/2">
       <div
         onClick={() => {
           if (breakpoint == "lg") return;
           else setActiveId(cardId);
         }}
         className={clsx(
-          "relative overflow-hidden p-12 gap-8 flex flex-col rounded-sm cursor-pointer bg-first text-white outline outline-black",
-          "md:gap-3 md:cursor-default"
+          "relative overflow-hidden p-8 gap-8 flex flex-col rounded-sm cursor-pointer bg-first text-white outline outline-black",
+          "md:gap-3 md:cursor-default md:p-12"
         )}
       >
         <div className="relative z-10 flex justify-between items-center ">
-          <h2 className={clsx("font-bold text-lg", "md:text-2xl")}>{title}</h2>
+          <h2 className={clsx("font-bold", "md:text-lg")}>{title}</h2>
           <img
             className={clsx(
               "size-[14px]",
@@ -46,12 +46,19 @@ const Service = ({
               isActive && "rotate-45",
               "transition-all duration-700"
             )}
-            src={crossIcon.src}
+            src={crossIconPath.src}
             alt=""
           />
         </div>
         {(isActive || breakpoint == "lg") && (
-          <p className={clsx("relative z-10 line-clamp-2")}>{description}</p>
+          <p
+            className={clsx(
+              "relative z-10 text-sm line-clamp-2",
+              "md:text-base"
+            )}
+          >
+            {description}
+          </p>
         )}
         <Image
           width={215}
@@ -62,7 +69,7 @@ const Service = ({
             "md:w-[390px] md:h-[360]  ",
             isEven && "left-full"
           )}
-          src={patternUrl}
+          src={patternPath}
           alt="pattern"
         />
       </div>

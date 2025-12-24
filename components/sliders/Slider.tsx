@@ -14,7 +14,7 @@ interface SliderProps {
 const Slider = ({ data }: SliderProps) => {
   return (
     <div
-      className="container mx-auto slider mb-[20px] overflow-hidden"
+      className="slider mb-[20px] overflow-hidden"
       style={
         {
           "--width": "150px",

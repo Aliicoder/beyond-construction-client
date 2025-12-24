@@ -7,11 +7,9 @@ import services from "@/constants/services";
 const Services = () => {
   const [activeId, setActiveId] = useState(1);
   return (
-    <section>
-      <section className="py-[90px]">
-        <Title text="خدماتنا" />
-      </section>
-      <div className="container mx-auto flex flex-wrap">
+    <section className="container mx-auto flex flex-col pt-16 gap-12 md:pt-24 md:gap-16">
+      <Title text="خدماتنا" />
+      <div className="flex flex-wrap">
         {services.map(({ id, title, description }, index) => (
           <Service
             key={id}
