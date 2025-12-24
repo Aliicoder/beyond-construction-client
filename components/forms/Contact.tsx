@@ -26,6 +26,7 @@ export default function MyForm() {
     try {
       console.log(values);
     } catch (error) {
+      //handle error
       console.error("Form submission error", error);
     }
   }
