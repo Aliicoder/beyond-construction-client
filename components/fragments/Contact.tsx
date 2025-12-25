@@ -4,7 +4,7 @@ import Image from "next/image";
 const Contact = () => {
   return (
     <div className="flex">
-      <div className="flex-1/2 ">
+      <div className="flex-1 mx-5 md:flex-1/2">
         <ContactForm />
       </div>
       <div className="flex-1/2 hidden justify-center items-center md:flex">

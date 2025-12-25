@@ -7,15 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/FirstBtn";
-import Image from "next/image";
-import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
-
-const formSchema = z.object({
-  name: z.string().min(1).min(0).max(20),
-  email: z.string(),
-  mobile_number: z.string(),
-  message: z.string(),
-});
+import PhoneInput from "react-phone-number-input";
+import { Controller } from "react-hook-form";
+import formSchema from "@/lib/validations/query";
+import clsx from "clsx";
 
 export default function MyForm() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -26,7 +21,6 @@ export default function MyForm() {
     try {
       console.log(values);
     } catch (error) {
-      //handle error
       console.error("Form submission error", error);
     }
   }
@@ -35,7 +29,10 @@ export default function MyForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="max-w-[329px] space-y-8  md:mx-auto py-10 px-5 mx-5 bg-white outline outline-black rounded-sm md:p-10"
+        className={clsx(
+          "max-w-[329px] py-10 px-5 space-y-8 mx-auto rounded-sm",
+          "bg-white outline outline-black"
+        )}
       >
         <Field>
           <FieldLabel htmlFor="name">الاسم</FieldLabel>
@@ -49,18 +46,36 @@ export default function MyForm() {
 
           <FieldError>{form.formState.errors.email?.message}</FieldError>
         </Field>
+
         <Field>
-          <FieldLabel htmlFor="mobile_number">الهاتف</FieldLabel>
-          <Input
-            id="mobile_number"
-            placeholder=""
-            {...form.register("mobile_number")}
+          <FieldLabel>الهاتف</FieldLabel>
+
+          <Controller
+            control={form.control}
+            name="mobile_number"
+            render={({ field }) => (
+              <PhoneInput
+                {...field}
+                countries={["SA"]}
+                defaultCountry="SA"
+                international={false}
+                withCountryCallingCode
+                countryCallingCodeEditable={false}
+                className="
+          PhoneInput
+          flex items-center gap-2
+          rounded-sm border border-gray-200 shadow-2xs
+          px-3 py-2
+        "
+              />
+            )}
           />
 
           <FieldError>
             {form.formState.errors.mobile_number?.message}
           </FieldError>
         </Field>
+
         <Field>
           <FieldLabel htmlFor="message">الرسالة</FieldLabel>
           <Textarea id="message" placeholder="" {...form.register("message")} />
@@ -68,16 +83,8 @@ export default function MyForm() {
           <FieldError>{form.formState.errors.message?.message}</FieldError>
         </Field>
         <Button
-          className="w-full bg-second"
-          icon={
-            <Image
-              width={10}
-              height={10}
-              className="object-contain md:w-[14px] md:h-[14px]"
-              src={leftUpArrowPath}
-              alt="up-left-arrow"
-            />
-          }
+          className="w-full! rounded-md!"
+          textClassName="text-sm!"
           text="إرسال"
         />
       </form>

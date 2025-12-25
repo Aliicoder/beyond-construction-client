@@ -1,11 +1,17 @@
 import clsx from "clsx";
 interface FirstButtonProps {
   text: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   className?: string;
+  textClassName?: string;
 }
 
-const FirstBtn = ({ text, icon, className }: FirstButtonProps) => {
+const FirstBtn = ({
+  text,
+  icon,
+  className,
+  textClassName,
+}: FirstButtonProps) => {
   return (
     <button
       className={clsx(
@@ -16,7 +22,7 @@ const FirstBtn = ({ text, icon, className }: FirstButtonProps) => {
         className
       )}
     >
-      <div className={clsx("text-sm", "md:text-lg")}>{text}</div>
+      <div className={clsx("text-sm", "md:text-lg", textClassName)}>{text}</div>
       {icon}
     </button>
   );

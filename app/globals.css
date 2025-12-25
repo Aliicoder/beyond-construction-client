@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "react-phone-number-input/style.css";
+.PhoneInput {
+  direction: ltr;
+}
 
 @custom-variant dark (&:is(.dark *));
 
