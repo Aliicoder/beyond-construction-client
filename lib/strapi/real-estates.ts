@@ -1,10 +1,9 @@
 import "server-only";
 import { IRealEstate } from "@/types";
 
-const baseUrl =
-  process.env.ENV === "development"
-    ? "http://localhost:1337"
-    : process.env.STRAPI_URL!;
+const baseUrl = process.env.STRAPI_URL!
+  ? process.env.STRAPI_URL!
+  : "http://localhost:1337";
 
 export async function getRealEstates(): Promise<IRealEstate[]> {
   const res = await fetch(
