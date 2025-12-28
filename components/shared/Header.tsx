@@ -1,18 +1,35 @@
+"use client";
 import clsx from "clsx";
 import Image from "next/image";
 import BurgerMenu from "../fragments/BurgerMenu";
 import NavBar from "../fragments/NavBar";
+import burgerMenu from "@/assets/icons/burger-menu.png";
+import close from "@/assets/icons/close-brown.svg";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div
-      className={clsx(
-        "h-[85px] outline outline-black bg-white",
-        "md:h-[130px]"
-      )}
-    >
-      <div className="container mx-auto px-8 h-full flex justify-between items-center">
-        <BurgerMenu />
+    <div className="relative h-full outline outline-black ">
+      <div className="relative z-10 container mx-auto py-4 px-8  flex justify-between items-center bg-white">
+        {isOpen ? (
+          <Image
+            onClick={() => setIsOpen(false)}
+            width={14}
+            height={4}
+            src={close}
+            alt="burger-menu"
+          />
+        ) : (
+          <Image
+            onClick={() => setIsOpen(true)}
+            width={24}
+            height={24}
+            src={burgerMenu}
+            alt="burger-menu"
+          />
+        )}
+
         <Image
           width={144}
           height={42}
@@ -29,6 +46,7 @@ const Header = () => {
           <NavBar />
         </ul>
       </div>
+      <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

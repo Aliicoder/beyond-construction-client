@@ -33,7 +33,7 @@ const Service = ({
           else setActiveId(cardId);
         }}
         className={clsx(
-          "relative overflow-hidden p-8 gap-8 flex flex-col rounded-sm cursor-pointer bg-first text-white outline outline-black",
+          "relative overflow-hidden p-8 flex flex-col rounded-sm cursor-pointer bg-first text-white outline outline-black",
           "md:gap-3 md:cursor-default md:p-12"
         )}
       >
@@ -50,16 +50,15 @@ const Service = ({
             alt=""
           />
         </div>
-        {(isActive || breakpoint == "lg") && (
-          <p
-            className={clsx(
-              "relative z-10 text-sm line-clamp-2",
-              "md:text-base"
-            )}
-          >
-            {description}
-          </p>
-        )}
+        <p
+          className={clsx(
+            "transition-all duration-700 relative h-0 z-10 text-sm line-clamp-2",
+            "md:text-base",
+            isActive || breakpoint == "lg" ? "h-fit my-4" : "h-0"
+          )}
+        >
+          {description}
+        </p>
         <Image
           width={215}
           height={197}

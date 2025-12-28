@@ -1,14 +1,15 @@
-import ContactForm from "@/components/forms/Contact";
+import Form from "@/components/forms/Contact";
 import MapPath from "@/assets/images/map.svg";
-import Image from "next/image";
 const Contact = () => {
   return (
-    <div className="flex">
-      <div className="flex-1 mx-5 md:flex-1/2">
-        <ContactForm />
-      </div>
-      <div className="flex-1/2 hidden justify-center items-center md:flex">
-        <Image width={500} height={500} src={MapPath} alt="saudi arabia map" />
+    <div className="flex justify-center items-center flex-row">
+      <Form className="" />
+      <div className="hidden md:flex justify-center items-center">
+        <img
+          className="size-full object-contain"
+          src={MapPath.src}
+          alt="saudi arabia map"
+        />
       </div>
     </div>
   );

@@ -9,12 +9,13 @@ import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/FirstBtn";
 import PhoneInput from "react-phone-number-input";
 import { Controller } from "react-hook-form";
-import formSchema from "@/lib/validations/query";
+import formSchema from "@/lib/validations/book";
 import clsx from "clsx";
-import Image from "next/image";
-import sendIconPath from "@/assets/icons/send.svg";
+import { useEffect, useRef } from "react";
+import { trackElementHeight } from "@/lib/helpers/resizeTrackers";
 
-export default function MyForm({ className }: { className: string }) {
+export default function MyForm() {
+  const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -26,15 +27,17 @@ export default function MyForm({ className }: { className: string }) {
       console.error("Form submission error", error);
     }
   }
-
+  useEffect(() => {
+    trackElementHeight(formRef, "--book-form-height");
+  }, []);
   return (
     <Form {...form}>
       <form
+        ref={formRef}
         onSubmit={form.handleSubmit(onSubmit)}
         className={clsx(
-          "max-w-[329px] pt-7 p-5 space-y-8 mx-auto rounded-sm scale-75",
-          "bg-white border border-black  md:scale-100",
-          className
+          "max-w-[329px] py-10 px-5 space-y-8 scale-75",
+          "bg-white border md:scale-100"
         )}
       >
         <Field>
@@ -85,18 +88,9 @@ export default function MyForm({ className }: { className: string }) {
           <FieldError>{form.formState.errors.message?.message}</FieldError>
         </Field>
         <Button
-          icon={
-            <Image
-              width={14}
-              height={14}
-              className="object-contain md:size-[17px]"
-              src={sendIconPath}
-              alt="send-icon"
-            />
-          }
-          className=" w-full! rounded-md! bg-second"
+          className="w-full! rounded-md!"
           textClassName="text-sm!"
-          text="إرسال"
+          text=" احجز الآن"
         />
       </form>
     </Form>

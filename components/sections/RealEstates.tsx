@@ -1,68 +1,69 @@
 "use client";
-import { realEstates } from "@/constants/real-estates";
+import { useRealEstates } from "@/context/RealEstates";
 import Title from "@/components/fragments/Title";
 import RealEstate from "@/components/cards/RealEstate";
 import clsx from "clsx";
+import usePagination from "@/hooks/usePagination";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
+  PaginationEllipsis,
 } from "@/components/ui/pagination";
-import usePagination from "@/hooks/usePagination";
+import { useEffect, useState } from "react";
+import Skeleton from "@/components/skeletons/RealEstates";
+import { fakeData } from "@/constants/real-estates";
+import { IRealEstate } from "@/types";
 
-const RealEstates = () => {
+const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
+  const [showSkeleton, _] = useState(false);
+
   const { curRealEstates, page, setPage, totalPages } =
     usePagination(realEstates);
+
   return (
     <section
       id="real-estates"
       className={clsx(
-        "container mx-auto flex flex-col items-center gap-12 pt-16 md:gap-16 md:pt-24"
+        "container mx-auto flex flex-col items-center gap-12 pt-16 md:pt-24"
       )}
     >
-      <Title text="العقارات المتاحة " />
-      <div
-        className={clsx(
-          "grid grid-cols-2 flex-wrap justify-center gap-4 p-4",
-          "md:gap-[30px] md:grid-cols-3 lg:grid-cols-4"
-        )}
-      >
-        {curRealEstates.map((realEstate, i) => (
-          <RealEstate key={i} {...realEstate} />
-        ))}
+      <Title text="العقارات المتاحة" />
+
+      <div className="p-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {realEstates.length === 0 && showSkeleton
+          ? fakeData.map((estate) => (
+              <Skeleton key={estate.id} realEstate={estate} />
+            ))
+          : realEstates.length > 0 &&
+            curRealEstates.map((estate) => (
+              <RealEstate key={estate.id} realEstate={estate} />
+            ))}
       </div>
+
       <Pagination dir="ltr">
         <PaginationContent>
-          <PaginationItem className="px-2 bg-white rounded-sm outline outline-black">
-            <PaginationLink
-              onClick={() => setPage((curPage) => Math.max(curPage - 1, 1))}
-              href="#"
-              aria-label="السابق"
-            >
+          <PaginationItem>
+            <PaginationLink onClick={() => setPage((p) => Math.max(1, p - 1))}>
               السابق
             </PaginationLink>
           </PaginationItem>
 
           <PaginationItem>
-            <PaginationLink href="#real-estates">{page}</PaginationLink>
+            <PaginationLink>{page}</PaginationLink>
           </PaginationItem>
 
-          <PaginationItem className="-m-5">
-            <PaginationEllipsis />
-          </PaginationItem>
+          <PaginationEllipsis />
+
           <PaginationItem>
-            <PaginationLink href="#real-estates">{totalPages}</PaginationLink>
+            <PaginationLink>{totalPages}</PaginationLink>
           </PaginationItem>
 
-          <PaginationItem
-            onClick={() =>
-              setPage((curPage) => Math.min(curPage + 1, totalPages))
-            }
-            className="px-2 bg-white rounded-sm outline outline-black"
-          >
-            <PaginationLink href="#real-estates" aria-label="التالي">
+          <PaginationItem>
+            <PaginationLink
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            >
               التالي
             </PaginationLink>
           </PaginationItem>

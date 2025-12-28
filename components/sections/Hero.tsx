@@ -33,6 +33,7 @@ const Hero = () => {
         </h1>
         <Button
           text="تواصل معنا"
+          href="/contact-us"
           icon={
             <Image
               width={10}

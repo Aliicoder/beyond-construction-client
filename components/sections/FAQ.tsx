@@ -14,7 +14,10 @@ const FAQ = () => {
         {Questions.map((item, index) => (
           <div
             key={index}
-            className={clsx(index != Questions.length - 1 && "border-b")}
+            className={clsx(
+              "overflow-hidden",
+              index != Questions.length - 1 && "border-b"
+            )}
           >
             <div
               onClick={() =>
@@ -36,11 +39,14 @@ const FAQ = () => {
                 alt=""
               />
             </div>
-            {activeIndex === index && (
-              <div className="p-4">
-                <p className="text-sm md:text-base">{item.answer}</p>
-              </div>
-            )}
+            <div
+              className={clsx(
+                "h-0 transition-all duration-700",
+                activeIndex === index && "h-fit p-4 "
+              )}
+            >
+              <p className="text-sm md:text-base">{item.answer}</p>
+            </div>
           </div>
         ))}
       </div>

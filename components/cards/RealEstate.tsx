@@ -1,31 +1,25 @@
-import { StaticImageData } from "next/image";
 import riyalIcon from "@/assets/icons/riyal.png";
 import locationIcon from "@/assets/icons/location.svg";
 import buildingIcon from "@/assets/icons/building.svg";
 import sizeIcon from "@/assets/icons/size.svg";
 import clsx from "clsx";
+import { IRealEstate } from "@/types";
+import Link from "next/link";
+import { buildingTypes } from "@/constants/real-estates";
 interface RealEstateProps {
-  id: number;
-  location: string;
-  type: string;
-  price: string;
-  image: StaticImageData;
-  size: number[];
+  realEstate: IRealEstate;
 }
-const RealEstate = ({
-  id,
-  location,
-  type,
-  price,
-  size,
-  image,
-}: RealEstateProps) => {
+const RealEstate = ({ realEstate }: RealEstateProps) => {
+  const { id, location, type, price, width, height, images } = realEstate;
+
   return (
-    <div
+    <Link
+      scroll={false}
+      href={`/real-estates/${id}`}
       key={id}
       className={clsx("flex flex-col outline rounded-sm outline-black ", "")}
     >
-      <img src={image.src} alt="real estate" />
+      <img src={images[0].url} alt="real estate" />
       <div className="p-2 gap-2 flex flex-col bg-white md:p-4">
         <div className="flex items-center gap-2 text-lg font-bold">
           <img className="size-2 md:size-4" src={locationIcon.src} alt="" />
@@ -38,12 +32,12 @@ const RealEstate = ({
               src={buildingIcon.src}
               alt="building-type-icon"
             />
-            <div className="text-xs md:text-sm">{type}</div>
+            <div className="text-xs md:text-sm">{buildingTypes[type]}</div>
           </div>
           <div className="gap-2 flex items-center">
             <img className="size-2 " src={sizeIcon.src} alt="size-icon" />
             <span className="flex items-center gap-1 text-xs md:text-sm">
-              {size[0]} <div>x</div> {size[1]}
+              {width} <div>x</div> {height}
             </span>
           </div>
         </div>
@@ -57,7 +51,7 @@ const RealEstate = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

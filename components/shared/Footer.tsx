@@ -8,7 +8,7 @@ import patternUrl from "@/assets/patterns/pattern.png";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-12 pt-16 md:gap-16 md:pt-24">
+    <div className="mt-auto flex flex-col gap-12 pt-16 md:gap-16 md:pt-24">
       <Title text=" تواصل معنا" />
       <div>
         <div className="relative overflow-hidden py-[90px] bg-first border-t border-black text-white ">
