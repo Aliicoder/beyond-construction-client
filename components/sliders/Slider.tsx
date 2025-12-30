@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import React from "react";
 
 interface SliderProps {
@@ -14,7 +14,7 @@ interface SliderProps {
 const Slider = ({ data }: SliderProps) => {
   return (
     <div
-      className="slider mb-[20px] overflow-hidden"
+      className="relative slider mb-[20px] overflow-hidden"
       style={
         {
           "--width": "150px",
@@ -38,6 +38,7 @@ const Slider = ({ data }: SliderProps) => {
           </li>
         ))}
       </ul>
+      <div className="absolute inset-0 gradient" />
     </div>
   );
 };

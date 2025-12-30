@@ -8,8 +8,9 @@ import Link from "next/link";
 import { buildingTypes } from "@/constants/real-estates";
 interface RealEstateProps {
   realEstate: IRealEstate;
+  className?: string;
 }
-const RealEstate = ({ realEstate }: RealEstateProps) => {
+const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { id, location, type, price, width, height, images } = realEstate;
 
   return (
@@ -17,9 +18,18 @@ const RealEstate = ({ realEstate }: RealEstateProps) => {
       scroll={false}
       href={`/real-estates/${id}`}
       key={id}
-      className={clsx("flex flex-col outline rounded-sm outline-black ", "")}
+      className={clsx(
+        "flex flex-col h-full outline rounded-sm outline-black",
+        className
+      )}
     >
-      <img src={images[0].url} alt="real estate" />
+      <div className="h-[100px] md:h-[200px]">
+        <img
+          className="w-full h-full object-cover"
+          src={images[0].url}
+          alt="real estate"
+        />
+      </div>
       <div className="p-2 gap-2 flex flex-col bg-white md:p-4">
         <div className="flex items-center gap-2 text-lg font-bold">
           <img className="size-2 md:size-4" src={locationIcon.src} alt="" />

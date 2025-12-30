@@ -1,5 +1,4 @@
 "use client";
-import { useRealEstates } from "@/context/RealEstates";
 import Title from "@/components/fragments/Title";
 import RealEstate from "@/components/cards/RealEstate";
 import clsx from "clsx";
@@ -11,15 +10,11 @@ import {
   PaginationLink,
   PaginationEllipsis,
 } from "@/components/ui/pagination";
-import { useEffect, useState } from "react";
-import Skeleton from "@/components/skeletons/RealEstates";
-import { fakeData } from "@/constants/real-estates";
 import { IRealEstate } from "@/types";
+import { fakeData } from "@/constants/real-estates";
 
 const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
-  const [showSkeleton, _] = useState(false);
-
-  const { curRealEstates, page, setPage, totalPages } =
+  const { curRealEstates, page, setPage, totalPages, perPage } =
     usePagination(realEstates);
 
   return (
@@ -32,20 +27,28 @@ const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
       <Title text="العقارات المتاحة" />
 
       <div className="p-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {realEstates.length === 0 && showSkeleton
-          ? fakeData.map((estate) => (
-              <Skeleton key={estate.id} realEstate={estate} />
-            ))
-          : realEstates.length > 0 &&
-            curRealEstates.map((estate) => (
-              <RealEstate key={estate.id} realEstate={estate} />
-            ))}
+        {curRealEstates.map((estate) => (
+          <RealEstate key={estate.id} realEstate={estate} />
+        ))}
+
+        {Array.from({
+          length: perPage - curRealEstates.length,
+        }).map((_, index) => (
+          <RealEstate
+            key={`placeholder-${index}`}
+            className="invisible pointer-events-none"
+            realEstate={fakeData[0]}
+          />
+        ))}
       </div>
 
       <Pagination dir="ltr">
         <PaginationContent>
           <PaginationItem>
-            <PaginationLink onClick={() => setPage((p) => Math.max(1, p - 1))}>
+            <PaginationLink
+              className="w-auto h-auto p-2 bg-white border border-black rounded-sm cursor-pointer"
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+            >
               السابق
             </PaginationLink>
           </PaginationItem>
@@ -62,6 +65,7 @@ const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
 
           <PaginationItem>
             <PaginationLink
+              className="w-auto h-auto p-2 bg-white border border-black rounded-sm cursor-pointer"
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             >
               التالي

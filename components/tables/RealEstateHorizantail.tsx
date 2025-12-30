@@ -1,39 +1,85 @@
+"use client";
+import { buildingTypes } from "@/constants/real-estates";
 import { IRealEstate } from "@/types";
+import { useState, useEffect } from "react";
+import closeIcon from "@/assets/icons/close.svg";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import Images from "../overlays/Images";
+import clsx from "clsx";
 
 const RealEstateHorizantailTable = ({
   realEstate,
 }: {
   realEstate: IRealEstate;
 }) => {
+  const [showImages, setShowImages] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = showImages ? "hidden" : "auto";
+  }, [showImages]);
+
   return (
-    <table className="w-full text-right border-collapse lg:hidden">
-      <tbody className="divide-y">
-        <tr>
-          <th className="px-4 py-3 bg-first text-white">الوحدة</th>
-          <td className="px-4 py-3">{realEstate.id}</td>
-        </tr>
-        <tr>
-          <th className="px-4 py-3 bg-first text-white">النوع</th>
-          <td className="px-4 py-3">{realEstate.type}</td>
-        </tr>
-        <tr>
-          <th className="px-4 py-3 bg-first text-white">المساحة</th>
-          <td className="px-4 py-3">
-            {realEstate.width} × {realEstate.height}
-          </td>
-        </tr>
-        <tr>
-          <th className="px-4 py-3 bg-first text-white">السعر</th>
-          <td className="px-4 py-3 font-semibold">{realEstate.price}</td>
-        </tr>
-        <tr>
-          <th className="px-4 py-3 bg-first text-white">الموقع</th>
-          <td className="px-4 py-3 truncate max-w-[20ch]">
-            {realEstate.location}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <>
+      {showImages && (
+        <Images realEstate={realEstate} setShowImages={setShowImages} />
+      )}
+
+      <table
+        className={clsx(
+          "hidden w-full border-collapse text-right border-t border-black bg-white",
+          "lg:table"
+        )}
+      >
+        <thead className="bg-first text-white">
+          <tr>
+            <th className="px-6 py-4 text-sm font-semibold">الصور</th>
+            <th className="px-6 py-4 text-sm font-semibold">الوحدة</th>
+            <th className="px-6 py-4 text-sm font-semibold">النوع</th>
+            <th className="px-6 py-4 text-sm font-semibold">المساحة</th>
+            <th className="px-6 py-4 text-sm font-semibold">السعر</th>
+            <th className="px-6 py-4 text-sm font-semibold">الموقع</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr className="hover:bg-gray-50 transition">
+            <td
+              onClick={() => setShowImages(true)}
+              className="px-6 py-4 font-medium border-l border-gray-200 text-green-600 underline cursor-pointer"
+            >
+              عرض الصور ({realEstate.images.length})
+            </td>
+
+            <td className="px-6 py-4 border-l border-gray-200">
+              {realEstate.id}
+            </td>
+
+            <td className="px-6 py-4 border-l border-gray-200">
+              {buildingTypes[realEstate.type]}
+            </td>
+
+            <td className="px-6 py-4 border-l border-gray-200">
+              {realEstate.width} × {realEstate.height}
+            </td>
+
+            <td className="px-6 py-4 text-first font-semibold border-l border-gray-200">
+              {realEstate.price}
+            </td>
+
+            <td className="px-6 py-4 text-gray-600 truncate max-w-[20ch]">
+              {realEstate.location}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 };
 

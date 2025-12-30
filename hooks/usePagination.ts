@@ -9,6 +9,7 @@ export default function usePagination(realEstates: any[]) {
     curRealEstates: realEstates.slice(start, end),
     setPage,
     page,
+    perPage: PER_PAGE,
     totalPages: Math.ceil(realEstates.length / PER_PAGE),
   };
 }

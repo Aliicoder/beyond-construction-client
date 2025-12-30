@@ -1,45 +1,78 @@
+"use client";
+import { buildingTypes } from "@/constants/real-estates";
 import { IRealEstate } from "@/types";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import Images from "../overlays/Images";
 
-const RealEstateVerticalTable = ({
+const RealEstateHorizantailTable = ({
   realEstate,
 }: {
   realEstate: IRealEstate;
 }) => {
-  return (
-    <table className="hidden w-full border-collapse text-right lg:block ">
-      <thead className="bg-first text-white">
-        <tr>
-          <th className="px-6 py-4 text-sm font-semibold">الوحدة</th>
-          <th className="px-6 py-4 text-sm font-semibold">النوع</th>
-          <th className="px-6 py-4 text-sm font-semibold">المساحة</th>
-          <th className="px-6 py-4 text-sm font-semibold">السعر</th>
-          <th className="px-6 py-4 text-sm font-semibold">الموقع</th>
-        </tr>
-      </thead>
+  const [showImages, setShowImages] = useState(false);
 
-      <tbody>
-        <tr className="hover:bg-gray-50 transition">
-          <td className="px-6 py-4 font-medium text-gray-800 border-l border-gray-200">
-            {realEstate.id}
-          </td>
-          <td className="px-6 py-4 text-gray-600 border-l border-gray-200">
-            {realEstate.type}
-          </td>
-          <td className="px-6 py-4 text-gray-600 border-l border-gray-200">
-            <span>{realEstate.width}</span>
-            <span className="px-2">x</span>
-            <span>{realEstate.height}</span>
-          </td>
-          <td className="px-6 py-4 text-first font-semibold border-l border-gray-200">
-            {realEstate.price}
-          </td>
-          <td className="px-6 p-4 text-gray-600 truncate w-[15ch]">
-            {realEstate.location}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  useEffect(() => {
+    document.body.style.overflow = showImages ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showImages]);
+
+  return (
+    <>
+      {showImages && (
+        <Images realEstate={realEstate} setShowImages={setShowImages} />
+      )}
+      <table
+        className={clsx(
+          "w-full text-right border-collapse text-xs border-t border-black bg-white",
+          "md:text-base lg:hidden"
+        )}
+      >
+        <tbody className="divide-y">
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">الصور</th>
+            <td
+              onClick={() => setShowImages(true)}
+              className="px-4 py-3 text-green-600 underline cursor-pointer"
+            >
+              عرض الصور ({realEstate.images.length})
+            </td>
+          </tr>
+
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">الوحدة</th>
+            <td className="px-4 py-3">{realEstate.id}</td>
+          </tr>
+
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">النوع</th>
+            <td className="px-4 py-3">{buildingTypes[realEstate.type]}</td>
+          </tr>
+
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">المساحة</th>
+            <td className="px-4 py-3">
+              {realEstate.width} × {realEstate.height}
+            </td>
+          </tr>
+
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">السعر</th>
+            <td className="px-4 py-3 font-semibold">{realEstate.price}</td>
+          </tr>
+
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">الموقع</th>
+            <td className="px-4 py-3 truncate max-w-[20ch]">
+              {realEstate.location}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 };
 
-export default RealEstateVerticalTable;
+export default RealEstateHorizantailTable;

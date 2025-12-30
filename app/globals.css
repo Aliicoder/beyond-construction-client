@@ -13,6 +13,15 @@
   --font-janna: "Janna", system-ui, sans-serif;
 }
 
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 251, 248, 1) 0%,
+    rgba(255, 251, 248, 0) 50%,
+    rgba(255, 251, 248, 1) 100%
+  );
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -188,4 +197,23 @@
   to {
     left: calc(var(--width) * -1);
   }
+}
+
+html,
+body {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.hide-scroll {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }

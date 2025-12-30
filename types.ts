@@ -1,4 +1,4 @@
-type Type = "building" | "flat" | "villa";
+type Type = "building" | "apartment" | "villa";
 type Image = {
   url: string;
 };

@@ -15,7 +15,7 @@ const BurgerMenu = ({
   const pathname = usePathname();
   const breakpoint = useTailwindBreakpoint();
   useEffect(() => {
-    if (breakpoint === "lg") setIsOpen(false);
+    if (breakpoint === "md") setIsOpen(false);
   }, [breakpoint]);
   return (
     <>
@@ -23,11 +23,13 @@ const BurgerMenu = ({
         className={clsx(
           "max-h-0 overflow-hidden flex flex-col gap-8 text-white",
           "items-center transition-all ease-in-out duration-700 bg-first",
-          isOpen && "max-h-[400px] p-8"
+          isOpen && breakpoint !== "md" && "max-h-[400px] p-8"
         )}
       >
         {navs.map((nav) => {
-          const isActive = pathname === nav.href;
+          const isActive =
+            pathname === nav.href ||
+            (pathname.startsWith(nav.href) && nav.href !== "/");
           return (
             <li key={nav.name}>
               <Link

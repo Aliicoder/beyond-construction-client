@@ -9,7 +9,9 @@ const NavBar = () => {
   return (
     <>
       {navs.map((nav) => {
-        const isActive = nav.href === pathname;
+        const isActive =
+          nav.href === pathname ||
+          (pathname.startsWith(nav.href) && nav.href !== "/");
         return (
           <li key={nav.name}>
             <Link

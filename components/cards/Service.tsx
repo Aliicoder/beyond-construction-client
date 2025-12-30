@@ -29,7 +29,8 @@ const Service = ({
     <div className="p-4 w-full md:w-1/2">
       <div
         onClick={() => {
-          if (breakpoint == "lg") return;
+          console.log(breakpoint);
+          if (breakpoint !== "sm") return;
           else setActiveId(cardId);
         }}
         className={clsx(
@@ -42,7 +43,7 @@ const Service = ({
           <img
             className={clsx(
               "size-[14px]",
-              breakpoint == "lg" && "hidden",
+              breakpoint !== "sm" && "hidden",
               isActive && "rotate-45",
               "transition-all duration-700"
             )}
@@ -54,7 +55,7 @@ const Service = ({
           className={clsx(
             "transition-all duration-700 relative h-0 z-10 text-sm line-clamp-2",
             "md:text-base",
-            isActive || breakpoint == "lg" ? "h-fit my-4" : "h-0"
+            isActive || breakpoint !== "sm" ? "h-fit my-4" : "h-0"
           )}
         >
           {description}

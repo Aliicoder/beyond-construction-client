@@ -1,6 +1,6 @@
 import { RefObject } from "react";
 
-export const trackElementHeight = (
+export const trackElementDimensions = (
   reference: RefObject<HTMLElement | null>,
   property: string
 ) => {
@@ -8,8 +8,16 @@ export const trackElementHeight = (
 
   const handleResize = () => {
     const height = reference.current!.clientHeight;
-    console.log(height);
-    document.documentElement.style.setProperty(property, `${height}px`);
+    const width = reference.current!.clientWidth;
+    console.log(height, width);
+    document.documentElement.style.setProperty(
+      property + "-height",
+      `${height}px`
+    );
+    document.documentElement.style.setProperty(
+      property + "-width",
+      `${width}px`
+    );
   };
 
   handleResize();

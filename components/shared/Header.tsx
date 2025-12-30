@@ -6,26 +6,19 @@ import NavBar from "../fragments/NavBar";
 import burgerMenu from "@/assets/icons/burger-menu.png";
 import close from "@/assets/icons/close-brown.svg";
 import { useState } from "react";
-
+import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const breakpoint = useTailwindBreakpoint();
   return (
-    <div className="relative h-full outline outline-black ">
-      <div className="relative z-10 container mx-auto py-4 px-8  flex justify-between items-center bg-white">
-        {isOpen ? (
+    <div className="relative h-fit outline outline-black bg-white">
+      <div className="relative z-10 container mx-auto py-4 px-8  flex justify-between items-center">
+        {breakpoint === "sm" && (
           <Image
-            onClick={() => setIsOpen(false)}
-            width={14}
-            height={4}
-            src={close}
-            alt="burger-menu"
-          />
-        ) : (
-          <Image
-            onClick={() => setIsOpen(true)}
-            width={24}
-            height={24}
-            src={burgerMenu}
+            onClick={() => setIsOpen(!isOpen)}
+            width={isOpen ? 14 : 24}
+            height={isOpen ? 4 : 24}
+            src={isOpen ? close : burgerMenu}
             alt="burger-menu"
           />
         )}

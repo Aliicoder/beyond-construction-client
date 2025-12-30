@@ -54,7 +54,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-sm md:text-base">
-                  966920000015+ {"  |  "} السبت - الخميس
+                  966920000015+ {"  |  "} الأحد - الخميس
                 </div>
                 <div className="text-sm md:text-base">info@bctico.com</div>
               </div>

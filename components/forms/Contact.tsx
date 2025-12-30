@@ -1,102 +1,70 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Field, FieldLabel, FieldError } from "@/components/ui/field";
+import toast from "react-hot-toast";
+
+import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form } from "@/components/ui/form";
-import Button from "@/components/buttons/FirstBtn";
-import PhoneInput from "react-phone-number-input";
-import { Controller } from "react-hook-form";
-import formSchema from "@/lib/validations/query";
+import Button from "@/components/buttons/SecondBtn";
+import formSchema from "@/lib/validations/book";
 import clsx from "clsx";
-import Image from "next/image";
-import sendIconPath from "@/assets/icons/send.svg";
+import sendMail from "@/assets/icons/sendMail.svg";
 
-export default function MyForm({ className }: { className: string }) {
+export default function MyForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      console.log(values);
-    } catch (error) {
-      console.error("Form submission error", error);
-    }
+    toast.success("تم إرسال الطلب بنجاح");
+    console.log(values);
+  }
+
+  function onError(errors: any) {
+    const firstError = Object.values(errors)[0] as any;
+    toast.error(firstError.message);
   }
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(onSubmit, onError)}
         className={clsx(
-          "max-w-[329px] pt-7 p-5 space-y-8 mx-auto rounded-sm scale-75",
-          "bg-white border border-black  md:scale-100",
-          className
+          "md:w-[350px] py-7 px-5 space-y-8 rounded-sm",
+          "bg-white border "
         )}
       >
         <Field>
           <FieldLabel htmlFor="name">الاسم</FieldLabel>
-          <Input id="name" placeholder="" {...form.register("name")} />
-
-          <FieldError>{form.formState.errors.name?.message}</FieldError>
+          <Input type="text" {...form.register("name")} />
         </Field>
+
         <Field>
           <FieldLabel htmlFor="email">البريد الالكتروني</FieldLabel>
-          <Input id="email" placeholder="" {...form.register("email")} />
-
-          <FieldError>{form.formState.errors.email?.message}</FieldError>
+          <Input {...form.register("email")} />
         </Field>
 
         <Field>
-          <FieldLabel>الهاتف</FieldLabel>
-
-          <Controller
-            control={form.control}
-            name="mobile_number"
-            render={({ field }) => (
-              <PhoneInput
-                {...field}
-                countries={["SA"]}
-                defaultCountry="SA"
-                withCountryCallingCode
-                countryCallingCodeEditable={false}
-                className="
-          PhoneInput
-          flex items-center gap-2
-          rounded-sm border border-gray-200 shadow-2xs
-          px-3 py-2
-        "
-              />
-            )}
+          <FieldLabel htmlFor="phone">الهاتف</FieldLabel>
+          <Input
+            className="text-right"
+            type="tel"
+            {...form.register("phone")}
           />
-
-          <FieldError>
-            {form.formState.errors.mobile_number?.message}
-          </FieldError>
         </Field>
 
         <Field>
           <FieldLabel htmlFor="message">الرسالة</FieldLabel>
-          <Textarea id="message" placeholder="" {...form.register("message")} />
-
-          <FieldError>{form.formState.errors.message?.message}</FieldError>
+          <Textarea {...form.register("message")} />
         </Field>
+
         <Button
-          icon={
-            <Image
-              width={14}
-              height={14}
-              className="object-contain md:size-[17px]"
-              src={sendIconPath}
-              alt="send-icon"
-            />
-          }
-          className=" w-full! rounded-md! bg-second"
-          textClassName="text-sm!"
-          text="إرسال"
+          text="ارسال"
+          icon={<img className="size-5" src={sendMail.src} alt="" />}
         />
       </form>
     </Form>

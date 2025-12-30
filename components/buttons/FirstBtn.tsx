@@ -22,7 +22,7 @@ const FirstBtn = ({
   const classes = clsx(
     "mt-4 gap-6 pl-6 py-4 pr-8 flex justify-between items-center rounded-xs cursor-pointer transition-all",
     "hover:scale-95",
-    "bg-white text-black outline outline-1 outline-black",
+    "bg-white text-black border border-black",
     "md:w-fit",
     className
   );
