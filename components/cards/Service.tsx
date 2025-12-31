@@ -1,7 +1,7 @@
 "use client";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
-import crossIconPath from "@/assets/icons/cross.png";
-import patternPath from "@/assets/patterns/pattern.png";
+import crossIconPath from "@/assets/icons/cross-white.svg";
+import patternPath from "@/assets/patterns/pattern.svg";
 import clsx from "clsx";
 import Image from "next/image";
 interface ServiceProps {

@@ -2,19 +2,10 @@
 import { buildingTypes } from "@/constants/realEstates";
 import { IRealEstate } from "@/types";
 import { useState, useEffect } from "react";
-import closeIcon from "@/assets/icons/close.svg";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel";
-import Images from "../overlays/Images";
+import Images from "@/components/overlays/Images";
 import clsx from "clsx";
 
-const RealEstateHorizantailTable = ({
+const RealEstateHorizontalTable = ({
   realEstate,
 }: {
   realEstate: IRealEstate;
@@ -78,4 +69,4 @@ const RealEstateHorizantailTable = ({
   );
 };
 
-export default RealEstateHorizantailTable;
+export default RealEstateHorizontalTable;

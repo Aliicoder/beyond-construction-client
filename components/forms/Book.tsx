@@ -86,13 +86,13 @@ export default function MyForm({ documentId }: { documentId: string }) {
 
         {locked ? (
           <div className="text-sm text-center text-green-600">
-            تم إرسال الرسالة بنجاح
+            تم إرسال الطلب بنجاح
           </div>
         ) : (
           <Button
             type="submit"
-            text={isSubmitting ? "جارٍ الإرسال..." : "إرسال"}
-            icon={<img className="size-3" src={bookIcon.src} alt="" />}
+            text={isSubmitting ? "جارٍ الإرسال..." : "احجز الآن"}
+            icon={<img className="size-3" src={bookIcon.src} alt="احجز" />}
             disabled={isSubmitting}
           />
         )}

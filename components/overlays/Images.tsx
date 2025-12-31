@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import closeIcon from "@/assets/icons/close.svg";
+import closeIcon from "@/assets/icons/cross-white.svg";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import clsx from "clsx";
 
@@ -24,7 +24,7 @@ const Images = ({
         onClick={() => setShowImages(false)}
         className="absolute top-6 right-6 z-50"
       >
-        <img src={closeIcon.src} alt="close" />
+        <img className="rotate-45" src={closeIcon.src} alt="cross-icon" />
       </button>
       <Carousel dir="ltr" className="w-full max-w-4xl px-10">
         <CarouselContent>

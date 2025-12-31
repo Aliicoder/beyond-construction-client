@@ -3,9 +3,9 @@ import { buildingTypes } from "@/constants/realEstates";
 import { IRealEstate } from "@/types";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
-import Images from "../overlays/Images";
+import Images from "@/components/overlays/Images";
 
-const RealEstateHorizantailTable = ({
+const RealEstateVerticalTable = ({
   realEstate,
 }: {
   realEstate: IRealEstate;
@@ -70,4 +70,4 @@ const RealEstateHorizantailTable = ({
   );
 };
 
-export default RealEstateHorizantailTable;
+export default RealEstateVerticalTable;

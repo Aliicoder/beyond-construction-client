@@ -1,6 +1,6 @@
 import Image from "next/image";
 import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
-import patternUrl from "@/assets/patterns/pattern.png";
+import patternUrl from "@/assets/patterns/pattern.svg";
 import heroImg from "@/assets/images/hero-lg.jpg";
 import clsx from "clsx";
 import Button from "@/components/buttons/FirstBtn";

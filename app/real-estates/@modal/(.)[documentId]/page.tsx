@@ -9,7 +9,7 @@ export default async function Page({
 }) {
   const { documentId } = await params;
   return (
-    <div className="fixed z-50 inset-0 ">
+    <div className="fixed z-30 inset-0 ">
       <main className="size-full overflow-y-auto bg-second hide-scroll">
         <Header />
         <RealEstate documentId={documentId} />

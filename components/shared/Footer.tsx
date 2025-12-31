@@ -56,7 +56,7 @@ const Footer = () => {
                 <div className="text-sm md:text-base">
                   966920000015+ {"  |  "} الأحد - الخميس
                 </div>
-                <div className="text-sm md:text-base">info@bctico.com</div>
+                <div className="text-sm md:text-base">aqar@bctico.com</div>
               </div>
               <div className="text-base md:text-2xl font-bold">الفروع</div>
               <div className="flex flex-col gap-2">

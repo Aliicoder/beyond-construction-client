@@ -6,7 +6,7 @@ import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
 const Back = () => {
   const router = useRouter();
   return (
-    <div className="py-4 px-8 container mx-auto flex items-center justify-end ">
+    <div className="py-4 px-8 container mx-auto flex items-center justify-end cursor-pointer">
       <div className="font-semibold underline" onClick={() => router.back()}>
         رجوع
         <Image

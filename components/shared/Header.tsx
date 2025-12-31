@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import BurgerMenu from "../fragments/BurgerMenu";
 import NavBar from "../fragments/NavBar";
-import burgerMenu from "@/assets/icons/burger-menu.png";
+import burgerMenu from "@/assets/icons/burger-menu.svg";
 import close from "@/assets/icons/close-brown.svg";
 import { useState } from "react";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
@@ -16,8 +16,8 @@ const Header = () => {
         {breakpoint === "sm" && (
           <Image
             onClick={() => setIsOpen(!isOpen)}
-            width={isOpen ? 14 : 24}
-            height={isOpen ? 4 : 24}
+            width={isOpen ? 14 : 18}
+            height={isOpen ? 14 : 18}
             src={isOpen ? close : burgerMenu}
             alt="burger-menu"
           />

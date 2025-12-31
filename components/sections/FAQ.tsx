@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Questions from "@/constants/questions";
 import { useState } from "react";
 import Title from "../fragments/Title";
-import crossIconPath from "@/assets/icons/black-cross.svg";
+import crossIconPath from "@/assets/icons/cross-black.svg";
 import Image from "next/image";
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
