@@ -5,8 +5,6 @@ interface SliderProps {
   data: {
     alt: string;
     src: StaticImageData;
-    width: number;
-    height: number;
   }[];
   className?: string;
   rtl?: boolean;
@@ -14,17 +12,17 @@ interface SliderProps {
 const Slider = ({ data }: SliderProps) => {
   return (
     <div
-      className="relative slider mb-[20px] overflow-hidden"
+      className=" relative slider mb-[20px] overflow-hidden"
       style={
         {
-          "--width": "150px",
+          "--width": "100px",
           "--height": "200px",
           "--quntity": data.length,
         } as React.CSSProperties
       }
     >
-      <ul className="list">
-        {data.map(({ alt, src, width, height }, index) => (
+      <ul className=" list">
+        {data.map(({ alt, src }, index) => (
           <li
             style={
               {
@@ -32,7 +30,7 @@ const Slider = ({ data }: SliderProps) => {
               } as React.CSSProperties
             }
             key={index}
-            className="item"
+            className="p-2 md:p-0 item"
           >
             <img className="size-full object-contain" src={src.src} alt={alt} />
           </li>

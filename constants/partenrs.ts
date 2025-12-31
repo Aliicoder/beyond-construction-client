@@ -1,30 +1,30 @@
-import bcUrl from "@/assets/partenrs/logo-01.png";
-import ikUrl from "@/assets/partenrs/logo-02.png";
-import azUrl from "@/assets/partenrs/logo-03.png";
-import idUrl from "@/assets/partenrs/logo-04.png";
+import bcPath from "@/assets/partenrs/bcg.png";
+import vivianPath from "@/assets/partenrs/vivian.png";
+import azPath from "@/assets/partenrs/al-azm.png";
+import idPath from "@/assets/partenrs/idhome.png";
 
 export default [
   {
     alt: "id-home-logo",
-    src: bcUrl,
+    src: bcPath,
     width: 257,
     height: 173,
   },
   {
     alt: "ik-kitchen-logo",
-    src: ikUrl,
+    src: vivianPath,
     width: 253,
     height: 85,
   },
   {
     alt: "al-azm-logo",
-    src: azUrl,
+    src: azPath,
     width: 257,
     height: 173,
   },
   {
     alt: "",
-    src: idUrl,
+    src: idPath,
     width: 257,
     height: 173,
   },
