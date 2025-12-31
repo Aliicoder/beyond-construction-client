@@ -1,7 +1,7 @@
 "use server";
 import "server-only";
 
-const baseUrl = "http://localhost:1337";
+const baseUrl = process.env.STRAPI_URL || "http://localhost:1337";
 
 export const createMessage = async (data: any) => {
   const res = await fetch(`${baseUrl}/api/messages`, {
