@@ -1,31 +1,23 @@
-import bcPath from "@/assets/partenrs/bcg.png";
-import vivianPath from "@/assets/partenrs/vivian.png";
-import azPath from "@/assets/partenrs/al-azm.png";
-import idPath from "@/assets/partenrs/idhome.png";
+import cafePath from "@/assets/partenrs/cafe.png";
+import hrfyPath from "@/assets/partenrs/hrfy.png";
+import lastPricesPath from "@/assets/partenrs/last_prices.jpg";
+import sultanPath from "@/assets/partenrs/sultan.png";
 
 export default [
   {
-    alt: "id-home-logo",
-    src: bcPath,
-    width: 257,
-    height: 173,
+    alt: "cafe-logo",
+    src: cafePath,
   },
   {
-    alt: "ik-kitchen-logo",
-    src: vivianPath,
-    width: 253,
-    height: 85,
+    alt: "hrfy-logo",
+    src: hrfyPath,
   },
   {
-    alt: "al-azm-logo",
-    src: azPath,
-    width: 257,
-    height: 173,
+    alt: "last-prices-logo",
+    src: lastPricesPath,
   },
   {
-    alt: "",
-    src: idPath,
-    width: 257,
-    height: 173,
+    alt: "sultan-logo",
+    src: sultanPath,
   },
 ];

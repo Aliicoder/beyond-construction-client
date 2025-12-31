@@ -2,7 +2,7 @@ import Title from "@/components/fragments/Title";
 import Form from "@/components/forms/Book";
 import RealEstateVerticalTable from "@/components/tables/RealEstateHorizantail";
 import RealEstateHorizantailTable from "@/components/tables/RealEstateVertical";
-import { getRealEstates } from "@/lib/strapi/real-estates";
+import { getRealEstates } from "@/lib/strapi/realEstates";
 import clsx from "clsx";
 import Back from "@/components/buttons/Back";
 const RealEstate = async ({ documentId }: { documentId: string }) => {

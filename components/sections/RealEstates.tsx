@@ -11,7 +11,7 @@ import {
   PaginationEllipsis,
 } from "@/components/ui/pagination";
 import { IRealEstate } from "@/types";
-import { fakeData } from "@/constants/real-estates";
+import { fakeData } from "@/constants/realEstates";
 
 const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
   const { curRealEstates, page, setPage, totalPages, perPage } =

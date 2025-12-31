@@ -1,6 +1,6 @@
 import Header from "@/components/shared/Header";
 import Hero from "@/components/sections/Hero";
-import SuccessPartners from "@/components/sections/SuccessPartners";
+import SuccessPartners from "@/components/sections/Partners";
 import Prototypes from "@/components/sections/Prototypes";
 import Services from "@/components/sections/Services";
 import Footer from "@/components/shared/Footer";

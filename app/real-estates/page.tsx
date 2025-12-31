@@ -1,7 +1,7 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import RealEstates from "@/components/sections/RealEstates";
-import { getRealEstates } from "@/lib/strapi/real-estates";
+import { getRealEstates } from "@/lib/strapi/realEstates";
 
 const page = async () => {
   const realEstates = await getRealEstates();

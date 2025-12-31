@@ -1,5 +1,5 @@
 "use client";
-import { buildingTypes } from "@/constants/real-estates";
+import { buildingTypes } from "@/constants/realEstates";
 import { IRealEstate } from "@/types";
 import { useState, useEffect } from "react";
 import closeIcon from "@/assets/icons/close.svg";

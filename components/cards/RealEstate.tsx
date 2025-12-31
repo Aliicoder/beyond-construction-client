@@ -5,7 +5,7 @@ import sizeIcon from "@/assets/icons/size.svg";
 import clsx from "clsx";
 import { IRealEstate } from "@/types";
 import Link from "next/link";
-import { buildingTypes } from "@/constants/real-estates";
+import { buildingTypes } from "@/constants/realEstates";
 interface RealEstateProps {
   realEstate: IRealEstate;
   className?: string;
