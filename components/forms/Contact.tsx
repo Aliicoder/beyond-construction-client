@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/SecondBtn";
-import formSchema from "@/lib/validations/book";
+import formSchema from "@/lib/validations/contact";
 import clsx from "clsx";
 import sendMail from "@/assets/icons/sendMail.svg";
 import { createMessage } from "@/lib/strapi/messages";
