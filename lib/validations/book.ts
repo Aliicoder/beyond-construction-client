@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export default z.object({
+  real_estate: z.string().min(1, "العقار مطلوب"),
   name: z
     .string()
     .min(1, "الاسم مطلوب")

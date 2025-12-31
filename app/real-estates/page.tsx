@@ -5,6 +5,9 @@ import { getRealEstates } from "@/lib/strapi/real-estates";
 
 const page = async () => {
   const realEstates = await getRealEstates();
+  if (!realEstates) {
+    throw new Error("لا يوجد عقارات");
+  }
   return (
     <main className="min-h-screen bg-second hide-scroll">
       <Header />

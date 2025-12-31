@@ -5,14 +5,27 @@ import React from "react";
 interface FirstButtonProps {
   text: string;
   icon?: React.ReactNode;
+  disabled?: boolean;
   href?: string;
+  className?: string;
+  width?: "full" | "fit";
   onClick?: () => void;
+  type?: "button" | "submit";
 }
 
-const SecondBtn = ({ text, icon, href, onClick }: FirstButtonProps) => {
+const SecondBtn = ({
+  text,
+  icon,
+  href,
+  width = "full",
+  type = "submit",
+  onClick,
+  disabled,
+}: FirstButtonProps) => {
   const className = clsx(
-    "w-full mt-4 px-4 py-3 pr-5 flex justify-between items-center bg-first text-white rounded-md border",
-    "hover:scale-95 cursor-pointer transition-all"
+    "mt-4 px-4 py-3 pr-5 flex justify-between items-center bg-first text-white rounded-md border",
+    "hover:scale-95 cursor-pointer transition-all",
+    `w-${width}`
   );
 
   const content = (
@@ -31,7 +44,12 @@ const SecondBtn = ({ text, icon, href, onClick }: FirstButtonProps) => {
   }
 
   return (
-    <button onClick={onClick} className={className}>
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      className={className}
+    >
       {content}
     </button>
   );

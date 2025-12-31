@@ -11,13 +11,14 @@ interface RealEstateProps {
   className?: string;
 }
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
-  const { id, location, type, price, width, height, images } = realEstate;
+  const { documentId, location, type, price, width, height, images } =
+    realEstate;
 
   return (
     <Link
       scroll={false}
-      href={`/real-estates/${id}`}
-      key={id}
+      href={`/real-estates/${documentId}`}
+      key={documentId}
       className={clsx(
         "flex flex-col h-full outline rounded-sm outline-black",
         className

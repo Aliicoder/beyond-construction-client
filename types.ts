@@ -3,7 +3,7 @@ type Image = {
   url: string;
 };
 export interface IRealEstate {
-  id: number;
+  documentId: string;
   location: string;
   type: Type;
   price: number;

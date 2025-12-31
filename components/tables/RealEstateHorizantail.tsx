@@ -40,7 +40,6 @@ const RealEstateHorizantailTable = ({
         <thead className="bg-first text-white">
           <tr>
             <th className="px-6 py-4 text-sm font-semibold">الصور</th>
-            <th className="px-6 py-4 text-sm font-semibold">الوحدة</th>
             <th className="px-6 py-4 text-sm font-semibold">النوع</th>
             <th className="px-6 py-4 text-sm font-semibold">المساحة</th>
             <th className="px-6 py-4 text-sm font-semibold">السعر</th>
@@ -55,10 +54,6 @@ const RealEstateHorizantailTable = ({
               className="px-6 py-4 font-medium border-l border-gray-200 text-green-600 underline cursor-pointer"
             >
               عرض الصور ({realEstate.images.length})
-            </td>
-
-            <td className="px-6 py-4 border-l border-gray-200">
-              {realEstate.id}
             </td>
 
             <td className="px-6 py-4 border-l border-gray-200">

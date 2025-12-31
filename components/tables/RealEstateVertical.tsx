@@ -42,11 +42,6 @@ const RealEstateHorizantailTable = ({
           </tr>
 
           <tr>
-            <th className="px-4 py-3 bg-first text-white">الوحدة</th>
-            <td className="px-4 py-3">{realEstate.id}</td>
-          </tr>
-
-          <tr>
             <th className="px-4 py-3 bg-first text-white">النوع</th>
             <td className="px-4 py-3">{buildingTypes[realEstate.type]}</td>
           </tr>

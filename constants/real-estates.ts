@@ -8,7 +8,7 @@ export const buildingTypes = {
 };
 export const fakeData: IRealEstate[] = [
   {
-    id: 1,
+    documentId: "dfscwerewr",
     location: "الرياض - حي الروابي مخرج 15",
     type: "apartment",
     price: 7500,
@@ -17,7 +17,7 @@ export const fakeData: IRealEstate[] = [
     images: [{ url: fakeImage.src }],
   },
   {
-    id: 2,
+    documentId: "dfscwerewr",
     location: "الرياض - حي الروابي مخرج 15",
     type: "apartment",
     price: 86000,
@@ -26,7 +26,7 @@ export const fakeData: IRealEstate[] = [
     images: [{ url: fakeImage.src }],
   },
   {
-    id: 3,
+    documentId: "dfscwerewr",
     location: "الرياض - حي الروابي مخرج 15",
     type: "apartment",
     price: 86000,

@@ -2,13 +2,16 @@
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
+import Button from "@/components/buttons/SecondBtn";
 
-const GlobalError = ({ error }: { error: Error }) => {
+const Error = ({ error }: { error: Error }) => {
+  const router = useRouter();
   return (
-    <main>
+    <main className="bg-second">
       <Header />
 
-      <div className="min-h-screen md:h-[calc(100svh-300px)] gap-4 flex flex-col items-center justify-center bg-second">
+      <div className="h-[calc(100svh-300px)] gap-4 flex flex-col items-center justify-center">
         <h1
           className={clsx(
             "px-[20px] text-4xl font-bold text-center",
@@ -26,25 +29,11 @@ const GlobalError = ({ error }: { error: Error }) => {
         >
           {error?.message || "نعتذر، حدثت مشكلة أثناء تحميل الصفحة."}
         </p>
-
-        <button
-          onClick={() => window.location.reload()}
-          className={clsx(
-            "mt-8 border border-blue-500 bg-blue-500 px-4 py-2 rounded cursor-pointer text-xl text-white",
-            "max-md:text-sm"
-          )}
-        >
-          إعادة تحميل الصفحة
-        </button>
-        <button
-          onClick={() => window.history.back()}
-          className={clsx(
-            "mt-4 border border-gray-500 bg-gray-500 px-4 py-2 rounded cursor-pointer text-xl text-white",
-            "max-md:text-sm"
-          )}
-        >
-          العودة للصفحة السابقة
-        </button>
+        <Button
+          width="fit"
+          text="العودة للصفحة السابقة"
+          onClick={() => router.back()}
+        />
       </div>
 
       <Footer />
@@ -52,4 +41,4 @@ const GlobalError = ({ error }: { error: Error }) => {
   );
 };
 
-export default GlobalError;
+export default Error;
