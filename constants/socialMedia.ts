@@ -1,7 +1,7 @@
-import facebook from "@/assets/icons/socialMedia/facebook.png";
-import twitter from "@/assets/icons/socialMedia/x.png";
-import instagram from "@/assets/icons/socialMedia/instagram.png";
-import linkedin from "@/assets/icons/socialMedia/linkedin.png";
+import facebook from "@/assets/icons/socialMedia/facebook.svg";
+import twitter from "@/assets/icons/socialMedia/x.svg";
+import instagram from "@/assets/icons/socialMedia/insta.svg";
+import linkedin from "@/assets/icons/socialMedia/linkedin.svg";
 
 export default [
   { alt: "facebook", src: facebook.src },

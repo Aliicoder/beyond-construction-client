@@ -3,7 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
 import whatsappIconPath from "@/assets/icons/socialMedia/whatsapp.svg";
-import callIconPath from "@/assets/icons/call-round.svg";
+import callIconPath from "@/assets/icons/call-rounded.svg";
 const ContactBar = () => {
   return (
     <div
@@ -25,15 +25,9 @@ const ContactBar = () => {
       </Link>
       <Link
         href="tel:+966920000015"
-        className={clsx("cursor-pointer", "md:hidde")}
+        className={clsx("cursor-pointer", "md:hidden")}
       >
-        <Image
-          className="-rotate-90"
-          src={callIconPath}
-          alt="call-button"
-          width={30}
-          height={30}
-        />
+        <Image src={callIconPath} alt="call-button" width={30} height={30} />
       </Link>
     </div>
   );

@@ -24,7 +24,7 @@ const RealEstateHorizontalTable = ({
 
       <table
         className={clsx(
-          "hidden w-full border-collapse text-right border-t border-black bg-white",
+          "hidden w-full border-collapse text-right bg-white",
           "lg:table"
         )}
       >
@@ -56,7 +56,7 @@ const RealEstateHorizontalTable = ({
             </td>
 
             <td className="px-6 py-4 text-first font-semibold border-l border-gray-200">
-              {realEstate.price}
+              {new Number(realEstate.price).toLocaleString("en-US")}
             </td>
 
             <td className="px-6 py-4 text-gray-600 truncate max-w-[20ch]">

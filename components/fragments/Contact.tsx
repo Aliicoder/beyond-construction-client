@@ -6,7 +6,7 @@ const Contact = () => {
       <Form />
       <div className="hidden md:flex justify-center items-center">
         <img
-          className="size-full object-contain"
+          className="size-full object-contain "
           src={MapPath.src}
           alt="saudi arabia map"
         />

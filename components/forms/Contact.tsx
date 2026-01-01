@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -56,7 +55,7 @@ export default function MyForm() {
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
         className={clsx(
-          "md:w-[350px] py-7 px-5 space-y-8 rounded-sm bg-white border",
+          "md:w-[350px] py-7 px-5 space-y-8 rounded-sm outline outline-black bg-white fade-up",
           locked && "opacity-50 pointer-events-none"
         )}
       >

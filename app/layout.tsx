@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`antialiased font-janna `}>{children}</body>
+      <body className={`antialiased font-janna`}>{children}</body>
     </html>
   );
 }

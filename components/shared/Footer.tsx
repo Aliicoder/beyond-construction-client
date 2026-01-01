@@ -42,7 +42,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-2">
                 {navs.map((nav) => (
                   <li key={nav.name}>
-                    <Link href={""}>{nav.name}</Link>
+                    <Link href={nav.href}>{nav.name}</Link>
                   </li>
                 ))}
               </ul>

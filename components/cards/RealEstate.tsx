@@ -2,7 +2,7 @@ import riyalIcon from "@/assets/icons/riyal-currency.svg";
 import locationIcon from "@/assets/icons/location.svg";
 import buildingIcon from "@/assets/icons/building.svg";
 import sizeIcon from "@/assets/icons/size.svg";
-import crossIconPath from "@/assets/icons/cross-black.svg";
+import crossIconPath from "@/assets/icons/cross-white.svg";
 import clsx from "clsx";
 import { IRealEstate } from "@/types";
 import Link from "next/link";
@@ -22,7 +22,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
       href={`/real-estates/${documentId}`}
       key={documentId}
       className={clsx(
-        "flex flex-col h-full outline rounded-sm outline-black",
+        "flex flex-col h-full outline rounded-sm outline-black overflow-hidden",
         className
       )}
     >
@@ -58,7 +58,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           <Button
             icon={
               <img
-                className="size-3 md:hidden"
+                className="size-3 scale-95 md:hidden"
                 src={crossIconPath.src}
                 alt=""
               />
@@ -66,8 +66,10 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
             width="fit"
             text="احجز الآن"
           />
-          <div className="p-2 flex items-center gap-1 bg-second rounded-lg">
-            <div className="font-bold text-xs md:text-sm">{price}</div>
+          <div className="p-2 flex items-center gap-1">
+            <div className="font-bold text-xs md:text-sm">
+              {new Number(price).toLocaleString("en-US")}
+            </div>
             <img className="size-3 md:size-4 " src={riyalIcon.src} alt="" />
           </div>
         </div>

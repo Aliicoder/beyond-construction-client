@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <section className="container mx-auto flex flex-col pt-16 gap-12 md:pt-24 md:gap-16">
       <Title text="خدماتنا" />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap reveal">
         {services.map(({ id, title, description }, index) => (
           <Service
             key={id}

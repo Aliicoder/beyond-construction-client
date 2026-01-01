@@ -4,11 +4,11 @@ import clsx from "clsx";
 
 const Masonry = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center reveal">
       <div
         dir="ltr"
         className={clsx(
-          "gap-8 px-4 columns-2 md:gap-16 md:columns-3 overflow-hidden",
+          "gap-8 px-4 columns-2 md:gap-16 md:columns-3",
           "md:p-[30px] max-h-[1028px]"
         )}
       >

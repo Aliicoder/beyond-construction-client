@@ -26,7 +26,7 @@ const RealEstateVerticalTable = ({
       )}
       <table
         className={clsx(
-          "w-full text-right border-collapse text-xs border-t border-black bg-white",
+          "w-full text-right border-collapse text-xs bg-white",
           "md:text-base lg:hidden"
         )}
       >
@@ -55,7 +55,9 @@ const RealEstateVerticalTable = ({
 
           <tr>
             <th className="px-4 py-3 bg-first text-white">السعر</th>
-            <td className="px-4 py-3 font-semibold">{realEstate.price}</td>
+            <td className="px-4 py-3 font-semibold">
+              {new Number(realEstate.price).toLocaleString("en-US")}
+            </td>
           </tr>
 
           <tr>

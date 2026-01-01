@@ -23,7 +23,7 @@ const ThirdBtn = ({
   disabled,
 }: FirstButtonProps) => {
   const className = clsx(
-    "mt-4 p-2 md:py-1 flex justify-center items-center bg-second rounded-md border",
+    "mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
     "hover:scale-95 cursor-pointer transition-all",
     `w-${width}`
   );
