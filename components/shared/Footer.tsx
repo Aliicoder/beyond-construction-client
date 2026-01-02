@@ -4,42 +4,66 @@ import socialMedia from "@/constants/socialMedia";
 import navs from "@/constants/navs";
 import Link from "next/link";
 import Image from "next/image";
-import patternUrl from "@/assets/patterns/pattern.png";
+import patternUrl from "@/assets/patterns/pattern.svg";
+
+const Pattern = () => (
+  <Image
+    width={215}
+    height={197}
+    className={clsx(
+      `z-0 absolute object-contain left-0 top-0 -translate-1/3`,
+      "md:w-[390px] md:h-[360]  "
+    )}
+    src={patternUrl}
+    alt="pattern"
+  />
+);
 
 const Footer = () => {
   return (
-    <div className="mt-auto flex flex-col gap-12 pt-16 md:gap-16 md:pt-24">
+    <section
+      className={clsx("gap-12 pt-16 flex flex-col", "md:gap-16 md:pt-24")}
+    >
       <Title text=" تواصل معنا" />
-      <div>
-        <div className="relative overflow-hidden py-[90px] bg-first border-t border-black text-white ">
+      <div className="flex flex-col">
+        <div
+          id="contact-wrapper"
+          className="relative py-24 border-t overflow-hidden bg-first border-black text-white"
+        >
           <div
             className={clsx(
-              "relative z-10 container mx-auto px-[30px] gap-[30px] grid grid-cols-1",
+              "z-10 relative mx-auto container grid grid-cols-1",
               "md:grid-cols-3 md:pr-0"
             )}
           >
-            <div className={clsx("hidden gap-[30px] flex-col", "md:flex")}>
-              <div className="text-base md:text-2xl font-bold">
+            <div
+              id="company-info"
+              className={clsx("gap-8 p-8 hidden flex-col", "md:flex")}
+            >
+              <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 ماوراء البناء
               </div>
-              <div className="text-sm md:text-base">
+              <div className={clsx("mr-2 text-sm", "md:text-base")}>
                 دراسة السوق العقاري وتلبية الاحتياجات التي تساعد
                 <br /> في تطوير النشاط العقاري.
               </div>
-              <ul className="flex gap-4 mt-4">
+              <ul className="gap-4 mr-2 flex">
                 {socialMedia.map(({ alt, src }) => (
                   <li key={alt}>
-                    <img className="size-[20px]" src={src} alt={alt} />
+                    <Image width={20} height={20} src={src} alt={alt} />
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className={clsx("hidden flex-col j gap-8", "md:flex")}>
-              <div className="text-base md:text-2xl font-bold">
-                روابط سريعة{" "}
+            <div
+              id="quick-links"
+              className={clsx("gap-8 p-8 hidden flex-col", "md:flex")}
+            >
+              <div className={clsx("text-base font-bold", "md:text-2xl")}>
+                روابط سريعة
               </div>
-              <ul className="flex flex-col gap-2">
+              <ul className="mr-2 gap-2 flex flex-col">
                 {navs.map((nav) => (
                   <li key={nav.name}>
                     <Link href={nav.href}>{nav.name}</Link>
@@ -48,47 +72,42 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-8">
-              <div className="text-base md:text-2xl font-bold">
+            <div id="contact-column" className="gap-8 p-8 flex flex-col">
+              <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 معلومات الاتصال
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-sm md:text-base">
+              <div className="gap-2 mr-2 flex flex-col">
+                <div className={clsx("text-sm", "md:text-base")}>
                   966920000015+ {"  |  "} الأحد - الخميس
                 </div>
-                <div className="text-sm md:text-base">aqar@bctico.com</div>
+                <div className={clsx("text-sm", "md:text-base")}>
+                  aqar@bctico.com
+                </div>
               </div>
-              <div className="text-base md:text-2xl font-bold">الفروع</div>
-              <div className="flex flex-col gap-2">
-                <div className="text-sm md:text-base">
+              <div className={clsx("text-base font-bold", "md:text-2xl")}>
+                الفروع
+              </div>
+              <div className="gap-2 mr-2 flex flex-col">
+                <div className={clsx("text-sm", "md:text-base")}>
                   المملكة العربية السعودية - الرياض
                 </div>
-                <div className="text-sm md:text-base">
+                <div className={clsx("text-sm", "md:text-base")}>
                   المملكة العربية السعودية - جدة
                 </div>
               </div>
-              <ul className={clsx("flex gap-4 pt-8", "md:hidden")}>
+              <ul className={clsx("gap-4 pt-8 flex", "md:hidden")}>
                 {socialMedia.map(({ alt, src }) => (
                   <li key={alt}>
-                    <img className="size-[20px]" src={src} alt={alt} />
+                    <Image width={20} height={20} src={src} alt={alt} />
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-
-          <Image
-            width={215}
-            height={197}
-            className={clsx(
-              `z-0 absolute object-contain left-0 top-0 -translate-1/3`,
-              "md:w-[390px] md:h-[360]  "
-            )}
-            src={patternUrl}
-            alt="pattern"
-          />
+          <Pattern />
         </div>
         <div
+          id="copyright"
           className={clsx(
             "py-4 flex justify-center text-xs bg-white",
             "md:text-base"
@@ -97,7 +116,7 @@ const Footer = () => {
           © 2025 جميع الحقوق محفوظة شركة ماوراء البناءالعقارية
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

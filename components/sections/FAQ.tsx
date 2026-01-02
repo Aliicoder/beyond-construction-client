@@ -36,7 +36,7 @@ const FAQ = () => {
                   "transition-all duration-700"
                 )}
                 src={crossIconPath}
-                alt=""
+                alt="cross-icon"
               />
             </div>
             <div

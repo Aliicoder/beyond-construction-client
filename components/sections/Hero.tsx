@@ -4,23 +4,38 @@ import patternUrl from "@/assets/patterns/pattern.svg";
 import heroImg from "@/assets/images/hero-lg.jpg";
 import clsx from "clsx";
 import Button from "@/components/buttons/FirstBtn";
+const HeroImg = () => (
+  <div
+    style={{
+      backgroundImage: `url(${heroImg.src})`,
+    }}
+    className={clsx(
+      `w-full h-[200px] bg-no-repeat bg-cover border-b border-black`,
+      "md:h-[570px]"
+    )}
+  />
+);
+const HeroPattern = () => (
+  <Image
+    width={215}
+    height={197}
+    className={clsx(
+      "absolute left-0 top-0 -translate-y-1/3 -translate-x-1/3 rotate-90",
+      "md:w-[390px] md:h-[360px] md:bottom-0 md:top-auto md:translate-y-1/3 md:rotate-0"
+    )}
+    src={patternUrl}
+    alt="pattern"
+  />
+);
+
 const Hero = () => {
   return (
-    <div className="flex flex-col">
-      <div
-        style={{
-          backgroundImage: `url(${heroImg.src})`,
-        }}
-        className={clsx(
-          `w-full h-[200px] bg-no-repeat bg-cover border-b border-black`,
-          "md:h-[570px]"
-        )}
-      />
+    <section className="flex flex-col">
+      <HeroImg />
       <div
         className={clsx(
-          "relative container mx-auto px-8 py-12 flex flex-col gap-8 outline-1 rounded-xs overflow-hidden",
-          "text-white outline-black bg-first ",
-          "md:mt-[-300px] md:p-[100px]"
+          "relative container mx-auto px-8 py-12 flex flex-col gap-8 overflow-hidden outline outline-black text-white bg-first",
+          "md:rounded-md md:mt-[-300px] md:p-[100px]"
         )}
       >
         <h2 className={clsx("z-10 text-lg", "md:text-4xl")}>
@@ -44,18 +59,9 @@ const Hero = () => {
             />
           }
         />
-        <Image
-          width={215}
-          height={197}
-          className={clsx(
-            "z-0 absolute object-contain left-0 top-0 -translate-y-1/3 -translate-x-1/3 rotate-90",
-            "md:w-[390px] md:h-[360] md:bottom-0 md:top-auto md:translate-y-1/3  md:rotate-0"
-          )}
-          src={patternUrl}
-          alt="pattern"
-        />
+        <HeroPattern />
       </div>
-    </div>
+    </section>
   );
 };
 

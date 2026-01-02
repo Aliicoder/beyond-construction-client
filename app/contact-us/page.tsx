@@ -1,16 +1,16 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import FAQ from "@/components/sections/FAQ";
-import Whatsapp from "@/components/buttons/ContactBar";
+import FAQs from "@/components/sections/FAQ";
 import ContactUs from "@/components/sections/ContactUs";
+import ContactBar from "@/components/buttons/ContactBar";
 
 const page = () => {
   return (
     <main className="min-h-screen bg-second">
-      <Whatsapp />
+      <ContactBar />
       <Header />
       <ContactUs />
-      <FAQ />
+      <FAQs />
       <Footer />
     </main>
   );

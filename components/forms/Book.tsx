@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -11,9 +10,10 @@ import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/SecondBtn";
 import formSchema from "@/lib/validations/book";
 import clsx from "clsx";
-import bookIcon from "@/assets/icons/book.svg";
+import bookingIcon from "@/assets/icons/booking.svg";
 import { useState } from "react";
 import { createBooking } from "@/lib/strapi/bookings";
+import Image from "next/image";
 
 export default function MyForm({ documentId }: { documentId: string }) {
   const [locked, setLocked] = useState(false);
@@ -91,8 +91,8 @@ export default function MyForm({ documentId }: { documentId: string }) {
         ) : (
           <Button
             type="submit"
-            text={isSubmitting ? "جارٍ الإرسال..." : "احجز الآن"}
-            icon={<img className="size-3" src={bookIcon.src} alt="احجز" />}
+            text={isSubmitting ? "جارٍ الإرسال..." : "احجز "}
+            icon={<Image width={15} height={15} src={bookingIcon} alt="احجز" />}
             disabled={isSubmitting}
           />
         )}

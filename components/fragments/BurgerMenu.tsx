@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import clsx from "clsx";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import navs from "@/constants/navs";
@@ -18,35 +18,29 @@ const BurgerMenu = ({
     if (breakpoint === "md") setIsOpen(false);
   }, [breakpoint]);
   return (
-    <>
-      <ul
-        className={clsx(
-          "max-h-0 overflow-hidden flex flex-col gap-8 text-white",
-          "items-center transition-all ease-in-out duration-700 bg-first",
-          isOpen && breakpoint !== "md" && "max-h-[400px] p-8"
-        )}
-      >
-        {navs.map((nav) => {
-          const isActive =
-            pathname === nav.href ||
-            (pathname.startsWith(nav.href) && nav.href !== "/");
-          return (
-            <li key={nav.name}>
-              <Link
-                href={nav.href}
-                className={clsx(
-                  "text-lg text-center",
-                  "md:text-lg",
-                  isActive && "font-bold"
-                )}
-              >
-                {nav.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <ul
+      className={clsx(
+        "max-h-0 gap-8 flex flex-col items-center text-white bg-first",
+        "transition-all ease-in-out duration-700 ",
+        isOpen && breakpoint !== "md" && "max-h-[400px] p-8"
+      )}
+    >
+      {navs.map((nav) => {
+        const isActive =
+          pathname === nav.href ||
+          (pathname.startsWith(nav.href) && nav.href !== "/");
+        return (
+          <li key={nav.name}>
+            <Link
+              href={nav.href}
+              className={clsx("text-lg text-center", isActive && "font-bold")}
+            >
+              {nav.name}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

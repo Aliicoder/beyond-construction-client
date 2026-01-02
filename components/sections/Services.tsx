@@ -5,20 +5,18 @@ import Service from "@/components/cards/Service";
 import services from "@/constants/services";
 
 const Services = () => {
-  const [activeId, setActiveId] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <section className="container mx-auto flex flex-col pt-16 gap-12 md:pt-24 md:gap-16">
       <Title text="خدماتنا" />
-      <div className="flex flex-wrap reveal">
-        {services.map(({ id, title, description }, index) => (
+      <div className="flex flex-wrap">
+        {services.map((service, index) => (
           <Service
-            key={id}
-            cardId={id}
+            key={index}
             index={index}
-            activeId={activeId}
-            title={title}
-            description={description}
-            setActiveId={setActiveId}
+            service={service}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
           />
         ))}
       </div>

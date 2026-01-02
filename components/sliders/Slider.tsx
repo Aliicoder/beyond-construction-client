@@ -30,7 +30,7 @@ const Slider = ({ data }: SliderProps) => {
               } as React.CSSProperties
             }
             key={index}
-            className="p-2 md:p-0 item"
+            className="md:p-8 p-4 item"
           >
             <img className="size-full object-contain" src={src.src} alt={alt} />
           </li>
