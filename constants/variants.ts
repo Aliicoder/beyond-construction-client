@@ -14,3 +14,9 @@ export const fadeInVarients: Variants = {
     },
   },
 };
+
+export const viewport = {
+  once: true,
+  margin: "-80px",
+  fallback: true,
+};

@@ -4,7 +4,7 @@ import Title from "@/components/fragments/Title";
 import Service from "@/components/cards/Service";
 import services from "@/constants/services";
 import { motion } from "framer-motion";
-import { fadeInVarients } from "@/constants/variants";
+import { fadeInVarients, viewport } from "@/constants/variants";
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
@@ -14,7 +14,7 @@ const Services = () => {
         variants={fadeInVarients}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-200px" }}
+        viewport={viewport}
         className="flex flex-wrap"
       >
         {services.map((service, index) => (

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import LineSvg from "../svgs/LineSvg";
+import LineSvg from "@/components/svgs/LineSvg";
 import { TitleProps } from "@/types";
 
 const Title = ({ text }: TitleProps) => {

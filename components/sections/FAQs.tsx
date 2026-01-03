@@ -1,8 +1,8 @@
 "use client";
 import Questions from "@/constants/questions";
 import { useState } from "react";
-import Title from "../fragments/Title";
-import FAQ from "../cards/FAQ";
+import Title from "@/components/fragments/Title";
+import FAQ from "@/components/cards/FAQ";
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   return (

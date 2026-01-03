@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/buttons/FirstBtn";
 import { motion } from "framer-motion";
-import { fadeInVarients } from "@/constants/variants";
+import { fadeInVarients, viewport } from "@/constants/variants";
 import clsx from "clsx";
 import leftUpArrow from "@/assets/icons/left-up-arrow.svg";
 import pattern from "@/assets/patterns/pattern.svg";
@@ -12,7 +12,7 @@ const TextBox = () => {
       variants={fadeInVarients}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-200px" }}
+      viewport={viewport}
       className={clsx(
         "relative container mx-auto px-8 py-12 flex flex-col gap-8 overflow-hidden outline outline-black text-white bg-first",
         "md:rounded-md md:mt-[-250px] md:p-[100px]"

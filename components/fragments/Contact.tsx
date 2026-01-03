@@ -11,7 +11,7 @@ const Contact = () => {
           "md:flex"
         )}
       >
-        <div className="move-left-right">
+        <div className="w-[500px] h-[500px] move-left-right">
           <img
             className="size-full object-contain"
             src={map.src}

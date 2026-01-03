@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
-interface FirstButtonProps {
+interface ThirdButtonProps {
   text: string;
   icon?: React.ReactNode;
   disabled?: boolean;
@@ -21,7 +21,7 @@ const ThirdBtn = ({
   type = "submit",
   onClick,
   disabled,
-}: FirstButtonProps) => {
+}: ThirdButtonProps) => {
   const className = clsx(
     "mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
     "hover:scale-95 cursor-pointer transition-all",

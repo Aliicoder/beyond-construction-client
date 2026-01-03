@@ -2,7 +2,7 @@
 import prototypes from "@/constants/prototypes";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { fadeInVarients } from "@/constants/variants";
+import { fadeInVarients, viewport } from "@/constants/variants";
 
 const Masonry = () => {
   return (
@@ -10,7 +10,7 @@ const Masonry = () => {
       variants={fadeInVarients}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-200px" }}
+      viewport={viewport}
       className="flex justify-center"
     >
       <div
