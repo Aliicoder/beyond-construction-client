@@ -7,9 +7,8 @@ import clsx from "clsx";
 import { RealEstateProps } from "@/types";
 import Link from "next/link";
 import { buildingTypes } from "@/constants/emptyEstate";
-import Button from "@/components/buttons/ThirdBtn";
 import placeholderImg from "@/assets/images/placeholder.webp";
-// red
+import Button from "@/components/buttons/ThirdBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;

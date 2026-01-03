@@ -49,3 +49,33 @@ export interface IServiceProps {
 export interface TitleProps {
   text: string;
 }
+
+export interface IThirdButtonProps {
+  text: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  href?: string;
+  className?: string;
+  width?: "full" | "fit";
+  onClick?: () => void;
+  type?: "button" | "submit";
+}
+export interface ISecondButtonProps {
+  text: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  href?: string;
+  className?: string;
+  width?: "full" | "fit";
+  onClick?: () => void;
+  type?: "button" | "submit";
+}
+
+export interface IFirstButtonProps {
+  text: string;
+  icon?: React.ReactNode;
+  className?: string;
+  textClassName?: string;
+  href?: string;
+  onClick?: () => void;
+}
