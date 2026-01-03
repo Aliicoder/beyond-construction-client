@@ -8,7 +8,6 @@ import { RealEstateProps } from "@/types";
 import Link from "next/link";
 import { buildingTypes } from "@/constants/emptyEstate";
 import placeholderImg from "@/assets/images/placeholder.webp";
-import Button from "@/components/buttons/ThirdBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;
@@ -77,16 +76,6 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           id="foot"
           className={clsx("flex justify-between items-end", "md:mt-4")}
         >
-          <Button
-            icon={
-              <div className="size-[8px]">
-                <img className="md:hidden" src={crossIcon.src} alt="more" />
-              </div>
-            }
-            width="fit"
-            text="احجز الآن"
-          />
-
           <div className="gap-1 p-2 flex items-center">
             <div className={clsx("font-bold text-xs", "md:text-sm")}>
               {new Number(price).toLocaleString("en-US")}
