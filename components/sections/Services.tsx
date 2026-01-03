@@ -5,6 +5,7 @@ import Service from "@/components/cards/Service";
 import services from "@/constants/services";
 import { motion } from "framer-motion";
 import { fadeInVarients, viewport } from "@/constants/variants";
+// tri
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
