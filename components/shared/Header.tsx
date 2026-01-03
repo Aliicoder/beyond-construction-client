@@ -10,7 +10,12 @@ const Header = () => {
   const breakpoint = useTailwindBreakpoint();
   return (
     <div className="outline outline-black bg-white">
-      <div className="mx-auto py-4 px-8 container flex justify-between items-center">
+      <div
+        className={clsx(
+          "mx-auto py-4 px-8 container flex justify-between items-center ",
+          isOpen && "border-b border-black"
+        )}
+      >
         {breakpoint === "sm" && (
           <div
             onClick={() => setIsOpen(!isOpen)}

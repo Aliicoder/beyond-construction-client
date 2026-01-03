@@ -9,7 +9,7 @@ import Link from "next/link";
 import { buildingTypes } from "@/constants/emptyEstate";
 import Button from "@/components/buttons/ThirdBtn";
 import placeholderImg from "@/assets/images/placeholder.webp";
-
+// red
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;
