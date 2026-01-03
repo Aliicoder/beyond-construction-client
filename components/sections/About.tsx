@@ -1,5 +1,8 @@
+"use client";
 import Title from "@/components/fragments/Title";
 import clsx from "clsx";
+import { motion } from "framer-motion";
+import { fadeInVarients, viewport } from "@/constants/variants";
 
 const About = () => {
   return (
@@ -10,12 +13,18 @@ const About = () => {
       )}
     >
       <Title text="من نحن" />
-      <p className={clsx("max-w-[920px] p-4 text-center", "md:text-2xl")}>
+      <motion.p
+        variants={fadeInVarients}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className={clsx("max-w-[920px] p-4 text-center", "md:text-2xl")}
+      >
         شركة سعودية ذات مسؤولية محدودة انطلقت في مطلع عام 2012م تأسست على أيدي
         ذوي الخبرة والاختصاص في المجال العقاري، حيث ولدت فكرة إنشاء الشركة من
         خلال دراسة السوق العقاري في المملكة العربية السعودية وتلبية الاحتياجات
         التي تساعد في تطوير النشاط العقاري.
-      </p>
+      </motion.p>
     </section>
   );
 };

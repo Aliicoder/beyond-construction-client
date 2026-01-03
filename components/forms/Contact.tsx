@@ -13,6 +13,8 @@ import clsx from "clsx";
 import sendMail from "@/assets/icons/sendMail.svg";
 import { createMessage } from "@/lib/strapi/messages";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInVarients, viewport } from "@/constants/variants";
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -52,7 +54,11 @@ export default function MyForm() {
 
   return (
     <Form {...form}>
-      <form
+      <motion.form
+        variants={fadeInVarients}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
         onSubmit={handleSubmit(onSubmit, onError)}
         className={clsx(
           "md:w-[350px] py-7 px-5 space-y-8 rounded-sm outline outline-black bg-white",
@@ -103,7 +109,7 @@ export default function MyForm() {
             disabled={isSubmitting}
           />
         )}
-      </form>
+      </motion.form>
     </Form>
   );
 }

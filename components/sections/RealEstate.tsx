@@ -5,8 +5,7 @@ import { getRealEstates } from "@/lib/strapi/realEstates";
 import clsx from "clsx";
 import Back from "@/components/buttons/Back";
 import RealEstateHorizontalTable from "@/components/tables/RealEstateHorizontal";
-import Image from "next/image";
-import placeholderPath from "@/assets/images/placeholder.webp";
+import placeholder from "@/assets/images/placeholder.webp";
 const RealEstate = async ({ documentId }: { documentId: string }) => {
   const realEstates = await getRealEstates();
   if (!realEstates) throw new Error("لا يوجد عقارات");
@@ -33,11 +32,11 @@ const RealEstate = async ({ documentId }: { documentId: string }) => {
                 "md:h-[170px] lg:h-[545px]"
               )}
             >
-              <Image
-                fill
-                className="static! object-cover"
-                src={realEstate?.images[0]?.url || placeholderPath}
+              <img
+                className="size-full object-cover"
+                src={realEstate?.images[0]?.url || placeholder.src}
                 alt="real estate"
+                loading="lazy"
               />
             </div>
           </div>

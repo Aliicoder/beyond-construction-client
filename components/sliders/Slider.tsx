@@ -32,7 +32,12 @@ const Slider = ({ data }: SliderProps) => {
             key={index}
             className="md:p-8 p-4 item"
           >
-            <img className="size-full object-contain" src={src.src} alt={alt} />
+            <img
+              className="size-full object-contain"
+              src={src.src}
+              alt={alt}
+              loading="lazy"
+            />
           </li>
         ))}
       </ul>
