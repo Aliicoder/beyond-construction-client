@@ -1,11 +1,11 @@
-import cafePath from "@/assets/partenrs/cafe.png";
-import hrfyPath from "@/assets/partenrs/hrfy.png";
-import lastPricesPath from "@/assets/partenrs/last_prices.jpg";
-import sultanPath from "@/assets/partenrs/sultan.png";
-import ikPath from "@/assets/partenrs/IK.png";
-import ivcafePath from "@/assets/partenrs/IVcafe.png";
-import starbucksPath from "@/assets/partenrs/starbucks.png";
-import karakteaPath from "@/assets/partenrs/karaktea.png";
+import cafePath from "@/assets/partenrs/cafe.webp";
+import hrfyPath from "@/assets/partenrs/hrfy.webp";
+import lastPricesPath from "@/assets/partenrs/last_prices.webp";
+import sultanPath from "@/assets/partenrs/sultan.webp";
+import ikPath from "@/assets/partenrs/IK.webp";
+import ivcafePath from "@/assets/partenrs/IVcafe.webp";
+import starbucksPath from "@/assets/partenrs/starbucks.webp";
+import karakteaPath from "@/assets/partenrs/karaktea.webp";
 
 export default [
   {

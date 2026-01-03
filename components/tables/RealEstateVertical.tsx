@@ -1,5 +1,5 @@
 "use client";
-import { buildingTypes } from "@/constants/realEstates";
+import { buildingTypes } from "@/constants/emptyEstate";
 import { IRealEstate } from "@/types";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -35,7 +35,7 @@ const RealEstateVerticalTable = ({
             <th className="px-4 py-3 bg-first text-white">الصور</th>
             <td
               onClick={() => setShowImages(true)}
-              className="px-4 py-3 text-green-600 underline cursor-pointer"
+              className="px-4 py-3 underline cursor-pointer text-green-600"
             >
               عرض الصور ({realEstate.images.length})
             </td>

@@ -55,7 +55,7 @@ export default function MyForm() {
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
         className={clsx(
-          "md:w-[350px] py-7 px-5 space-y-8 rounded-sm outline outline-black bg-white fade-up",
+          "md:w-[350px] py-7 px-5 space-y-8 rounded-sm outline outline-black bg-white",
           locked && "opacity-50 pointer-events-none"
         )}
       >

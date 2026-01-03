@@ -1,5 +1,5 @@
 "use client";
-import { buildingTypes } from "@/constants/realEstates";
+import { buildingTypes } from "@/constants/emptyEstate";
 import { IRealEstate } from "@/types";
 import { useState, useEffect } from "react";
 import Images from "@/components/overlays/Images";
@@ -55,7 +55,7 @@ const RealEstateHorizontalTable = ({
               {realEstate.width} × {realEstate.height}
             </td>
 
-            <td className="px-6 py-4 text-first font-semibold border-l border-gray-200">
+            <td className="px-6 py-4 font-semibold border-l border-gray-200">
               {new Number(realEstate.price).toLocaleString("en-US")}
             </td>
 

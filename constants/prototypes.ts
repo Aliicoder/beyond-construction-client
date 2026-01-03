@@ -1,13 +1,13 @@
-import rec01 from "@/assets/images/prototypes/Rectangle-1.png";
-import rec02 from "@/assets/images/prototypes/Rectangle-2.png";
-import rec03 from "@/assets/images/prototypes/Rectangle-3.png";
-import rec04 from "@/assets/images/prototypes/Rectangle-4.png";
-import rec05 from "@/assets/images/prototypes/Rectangle-5.png";
-import rec06 from "@/assets/images/prototypes/Rectangle-6.png";
+import rec01 from "@/assets/images/prototypes/Rectangle-1.webp";
+import rec02 from "@/assets/images/prototypes/Rectangle-2.webp";
+import rec03 from "@/assets/images/prototypes/Rectangle-3.webp";
+import rec04 from "@/assets/images/prototypes/Rectangle-4.webp";
+import rec05 from "@/assets/images/prototypes/Rectangle-5.webp";
+import rec06 from "@/assets/images/prototypes/Rectangle-6.webp";
 
 export default [
   {
-    src: rec01.src,
+    src: rec01,
     alt: "Prototype-1",
     heights: {
       small: 269,
@@ -16,7 +16,7 @@ export default [
     className: "",
   },
   {
-    src: rec02.src,
+    src: rec02,
     alt: "Prototype-2",
     heights: {
       small: 204,
@@ -26,7 +26,7 @@ export default [
   },
 
   {
-    src: rec03.src,
+    src: rec03,
     alt: "Prototype-3",
     heights: {
       small: 176,
@@ -36,7 +36,7 @@ export default [
   },
 
   {
-    src: rec04.src,
+    src: rec04,
     alt: "Prototype-4",
     heights: {
       small: 384,
@@ -45,7 +45,7 @@ export default [
     className: "",
   },
   {
-    src: rec05.src,
+    src: rec05,
     alt: "Prototype-5",
     heights: {
       small: 297,
@@ -55,7 +55,7 @@ export default [
   },
 
   {
-    src: rec06.src,
+    src: rec06,
     alt: "Prototype-6",
     heights: {
       small: 0,

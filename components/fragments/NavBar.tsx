@@ -16,7 +16,7 @@ const NavBar = () => {
           <li key={nav.name}>
             <Link
               className={clsx(
-                "text-lg cursor-pointer transition-all",
+                "text-lg cursor-pointer transition-all ease-in-out duration-300",
                 "hover:font-bold",
                 isActive && "font-bold"
               )}

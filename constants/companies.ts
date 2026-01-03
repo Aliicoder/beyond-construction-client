@@ -1,7 +1,7 @@
-import bcPath from "@/assets/companies/bcg.png";
-import vivianPath from "@/assets/companies/vivian.png";
-import azPath from "@/assets/companies/al-azm.png";
-import idPath from "@/assets/companies/idhome.png";
+import bcPath from "@/assets/companies/bcg.webp";
+import vivianPath from "@/assets/companies/vivian.webp";
+import azPath from "@/assets/companies/al-azm.webp";
+import idPath from "@/assets/companies/idhome.webp";
 
 export default [
   {

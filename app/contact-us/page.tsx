@@ -1,6 +1,6 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import FAQs from "@/components/sections/FAQ";
+import FAQs from "@/components/sections/FAQs";
 import ContactUs from "@/components/sections/ContactUs";
 import ContactBar from "@/components/buttons/ContactBar";
 

@@ -3,8 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import BurgerMenu from "@/components/fragments/BurgerMenu";
 import NavBar from "@/components/fragments/NavBar";
-import burgerMenu from "@/assets/icons/burger-menu.svg";
-import close from "@/assets/icons/close-brown.svg";
+import cross from "@/assets/icons/cross-brown.svg";
 import { useState } from "react";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 const Header = () => {
@@ -15,11 +14,15 @@ const Header = () => {
       <div className="mx-auto py-4 px-8 container flex justify-between items-center">
         {breakpoint === "sm" && (
           <Image
+            className={clsx(
+              "transition ease-in-out duration-300",
+              isOpen && "rotate-45"
+            )}
             onClick={() => setIsOpen(!isOpen)}
-            width={isOpen ? 14 : 18}
-            height={isOpen ? 14 : 18}
-            src={isOpen ? close : burgerMenu}
-            alt="burger-menu"
+            width={18}
+            height={18}
+            src={cross}
+            alt="cross-menu"
           />
         )}
 
