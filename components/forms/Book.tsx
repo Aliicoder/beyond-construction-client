@@ -10,10 +10,9 @@ import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/SecondBtn";
 import formSchema from "@/lib/validations/book";
 import clsx from "clsx";
-import bookingIcon from "@/assets/icons/booking.svg";
+import booking from "@/assets/icons/booking.svg";
 import { useState } from "react";
 import { createBooking } from "@/lib/strapi/bookings";
-import Image from "next/image";
 
 export default function MyForm({ documentId }: { documentId: string }) {
   const [locked, setLocked] = useState(false);
@@ -92,7 +91,15 @@ export default function MyForm({ documentId }: { documentId: string }) {
           <Button
             type="submit"
             text={isSubmitting ? "جارٍ الإرسال..." : "احجز "}
-            icon={<Image width={15} height={15} src={bookingIcon} alt="احجز" />}
+            icon={
+              <div className="w-[15px] h-[15px] ">
+                <img
+                  className="size-full object-contain"
+                  src={booking.src}
+                  alt="احجز"
+                />
+              </div>
+            }
             disabled={isSubmitting}
           />
         )}

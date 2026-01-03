@@ -1,7 +1,6 @@
 "use client";
 import prototypes from "@/constants/prototypes";
 import clsx from "clsx";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInVarients } from "@/constants/variants";
 
@@ -35,7 +34,7 @@ const Masonry = () => {
               className
             )}
           >
-            <Image src={src} alt={alt} fill className="static! object-cover" />
+            <img src={src} alt={alt} className="w-full h-full object-cover" />
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@ import rec06 from "@/assets/images/prototypes/Rectangle-6.webp";
 
 export default [
   {
-    src: rec01,
+    src: rec01.src,
     alt: "Prototype-1",
     heights: {
       small: 269,
@@ -16,7 +16,7 @@ export default [
     className: "",
   },
   {
-    src: rec02,
+    src: rec02.src,
     alt: "Prototype-2",
     heights: {
       small: 204,
@@ -26,7 +26,7 @@ export default [
   },
 
   {
-    src: rec03,
+    src: rec03.src,
     alt: "Prototype-3",
     heights: {
       small: 176,
@@ -36,7 +36,7 @@ export default [
   },
 
   {
-    src: rec04,
+    src: rec04.src,
     alt: "Prototype-4",
     heights: {
       small: 384,
@@ -45,7 +45,7 @@ export default [
     className: "",
   },
   {
-    src: rec05,
+    src: rec05.src,
     alt: "Prototype-5",
     heights: {
       small: 297,
@@ -55,7 +55,7 @@ export default [
   },
 
   {
-    src: rec06,
+    src: rec06.src,
     alt: "Prototype-6",
     heights: {
       small: 0,

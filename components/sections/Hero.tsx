@@ -1,8 +1,6 @@
-"use client";
-import Image from "next/image";
 import heroImg from "@/assets/images/hero-img.webp";
 import clsx from "clsx";
-import TextBox from "../fragments/TextBox";
+import TextBox from "@/components/fragments/TextBox";
 
 const HeroImg = () => (
   <div
@@ -11,10 +9,9 @@ const HeroImg = () => (
       "md:h-[570px]"
     )}
   >
-    <Image
-      fill
-      className="static! object-cover"
-      src={heroImg}
+    <img
+      className="size-full object-cover"
+      src={heroImg.src}
       alt="Hero image"
     />
   </div>

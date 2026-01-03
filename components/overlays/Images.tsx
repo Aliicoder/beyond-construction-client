@@ -5,7 +5,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/carousel";
+} from "@/components/ui/carousel";
 import closeIcon from "@/assets/icons/cross-white.svg";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import clsx from "clsx";

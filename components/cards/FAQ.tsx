@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Questions from "@/constants/questions";
-import crossIconPath from "@/assets/icons/cross-black.svg";
-import Image from "next/image";
+import crossIcon from "@/assets/icons/cross-black.svg";
 import { IFAQProps } from "@/types";
 
 const FAQ = ({ index, block, activeIndex, setActiveIndex }: IFAQProps) => {
@@ -21,15 +20,19 @@ const FAQ = ({ index, block, activeIndex, setActiveIndex }: IFAQProps) => {
         <p className={clsx("md:text-lg font-bold", "max-md:text-sm")}>
           {block.question}
         </p>
-        <Image
+        <div
           className={clsx(
             "size-3 md:size-4",
             "transition-all duration-700",
             activeIndex === index && "rotate-45"
           )}
-          src={crossIconPath}
-          alt="cross icon"
-        />
+        >
+          <img
+            className="size-full object-contain"
+            src={crossIcon.src}
+            alt="cross icon"
+          />
+        </div>
       </div>
       <p
         className={clsx(

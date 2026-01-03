@@ -3,20 +3,17 @@ import Title from "@/components/fragments/Title";
 import socialMedia from "@/constants/socialMedia";
 import navs from "@/constants/navs";
 import Link from "next/link";
-import Image from "next/image";
-import patternUrl from "@/assets/patterns/pattern.svg";
+import pattern from "@/assets/patterns/pattern.svg";
 
 const Pattern = () => (
-  <Image
-    width={215}
-    height={197}
+  <div
     className={clsx(
-      `z-0 absolute object-contain left-0 top-0 -translate-1/3`,
-      "md:w-[390px] md:h-[360]  "
+      `z-0 w-[215px] h-[197px] absolute object-contain left-0 top-0 -translate-1/3`,
+      "md:w-[390px] md:h-[360px]"
     )}
-    src={patternUrl}
-    alt="pattern"
-  />
+  >
+    <img className="size-full object-contain" src={pattern.src} alt="pattern" />
+  </div>
 );
 
 const Footer = () => {
@@ -43,14 +40,20 @@ const Footer = () => {
               <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 ماوراء البناء
               </div>
-              <div className={clsx("mr-2 text-sm", "md:text-base")}>
+              <div className={clsx("text-sm", "md:text-base")}>
                 دراسة السوق العقاري وتلبية الاحتياجات التي تساعد
                 <br /> في تطوير النشاط العقاري.
               </div>
-              <ul className="gap-4 mr-2 flex">
+              <ul className="gap-4 flex">
                 {socialMedia.map(({ alt, src }) => (
-                  <li key={alt}>
-                    <Image width={20} height={20} src={src} alt={alt} />
+                  <li key={alt} className="w-[20px] h-[20px]">
+                    <img
+                      className="size-full object-contain"
+                      width={20}
+                      height={20}
+                      src={src}
+                      alt={alt}
+                    />
                   </li>
                 ))}
               </ul>
@@ -63,7 +66,7 @@ const Footer = () => {
               <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 روابط سريعة
               </div>
-              <ul className="mr-2 gap-2 flex flex-col">
+              <ul className="gap-2 flex flex-col">
                 {navs.map((nav) => (
                   <li key={nav.name}>
                     <Link href={nav.href}>{nav.name}</Link>
@@ -76,7 +79,7 @@ const Footer = () => {
               <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 معلومات الاتصال
               </div>
-              <div className="gap-2 mr-2 flex flex-col">
+              <div className="gap-2 flex flex-col">
                 <div className={clsx("text-sm", "md:text-base")}>
                   966920000015+ {"  |  "} الأحد - الخميس
                 </div>
@@ -87,7 +90,7 @@ const Footer = () => {
               <div className={clsx("text-base font-bold", "md:text-2xl")}>
                 الفروع
               </div>
-              <div className="gap-2 mr-2 flex flex-col">
+              <div className="gap-2 flex flex-col">
                 <div className={clsx("text-sm", "md:text-base")}>
                   المملكة العربية السعودية - الرياض
                 </div>
@@ -97,8 +100,12 @@ const Footer = () => {
               </div>
               <ul className={clsx("gap-4 pt-8 flex", "md:hidden")}>
                 {socialMedia.map(({ alt, src }) => (
-                  <li key={alt}>
-                    <Image width={20} height={20} src={src} alt={alt} />
+                  <li key={alt} className="w-[20px] h-[20px]">
+                    <img
+                      className="size-full object-contain"
+                      src={src}
+                      alt={alt}
+                    />
                   </li>
                 ))}
               </ul>

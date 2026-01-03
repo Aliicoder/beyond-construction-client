@@ -91,7 +91,15 @@ export default function MyForm() {
           <Button
             type="submit"
             text={isSubmitting ? "جارٍ الإرسال..." : "إرسال"}
-            icon={<img className="size-5" src={sendMail.src} alt="" />}
+            icon={
+              <div className="w-[5px] h-[5px]">
+                <img
+                  className="size-full object-contain"
+                  src={sendMail.src}
+                  alt="إرسال"
+                />
+              </div>
+            }
             disabled={isSubmitting}
           />
         )}

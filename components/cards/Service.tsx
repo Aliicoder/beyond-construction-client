@@ -1,27 +1,28 @@
 "use client";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
-import crossIconPath from "@/assets/icons/cross-white.svg";
-import patternPath from "@/assets/patterns/pattern.svg";
+import crossIcon from "@/assets/icons/cross-white.svg";
+import pattern from "@/assets/patterns/pattern.svg";
 import clsx from "clsx";
-import Image from "next/image";
 import { IServiceProps } from "@/types";
 
 const Pattern = ({ index }: { index: number }) => {
   let rotate = index * 20;
   let isEven = index % 2 === 0;
   return (
-    <Image
-      width={215}
-      height={197}
+    <div
       style={{ transform: `rotate(${rotate}deg)` }}
       className={clsx(
-        `z-0 absolute object-contain left-0 top-0 -translate-1/2`,
+        `z-0 absolute w-[215px] h-[360px] left-0 top-0 -translate-1/2`,
         "md:w-[390px] md:h-[360]",
         isEven && "left-full"
       )}
-      src={patternPath}
-      alt="pattern"
-    />
+    >
+      <img
+        className="size-full object-contain"
+        src={pattern.src}
+        alt="pattern"
+      />
+    </div>
   );
 };
 
@@ -42,17 +43,19 @@ const Service = ({
       >
         <div className="z-10 p-8  flex justify-between items-center">
           <h2 className={clsx(" font-bold", "md:text-lg")}>{service.title}</h2>
-          <Image
-            width={14}
-            height={14}
+          <div
             className={clsx(
+              "w-[14px] h-[14px] transition-all duration-700",
               breakpoint !== "sm" && "hidden",
-              activeIndex === index && "rotate-45",
-              "transition-all duration-700"
+              activeIndex === index && "rotate-45"
             )}
-            src={crossIconPath}
-            alt="close icon"
-          />
+          >
+            <img
+              className="size-full object-contain"
+              src={crossIcon.src}
+              alt="close icon"
+            />
+          </div>
         </div>
         <p
           className={clsx(

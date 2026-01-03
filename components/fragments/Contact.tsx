@@ -1,6 +1,5 @@
 import Form from "@/components/forms/Contact";
-import MapPath from "@/assets/images/map.svg";
-import Image from "next/image";
+import map from "@/assets/images/map.svg";
 import clsx from "clsx";
 const Contact = () => {
   return (
@@ -12,12 +11,13 @@ const Contact = () => {
           "md:flex"
         )}
       >
-        <Image
-          fill
-          className="static! object-contain move-left-right"
-          src={MapPath}
-          alt="saudi arabia map"
-        />
+        <div className="move-left-right">
+          <img
+            className="size-full object-contain"
+            src={map.src}
+            alt="saudi arabia map"
+          />
+        </div>
       </div>
     </div>
   );

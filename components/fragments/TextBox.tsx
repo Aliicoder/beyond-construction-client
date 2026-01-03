@@ -1,23 +1,11 @@
+"use client";
 import Button from "@/components/buttons/FirstBtn";
 import { motion } from "framer-motion";
 import { fadeInVarients } from "@/constants/variants";
 import clsx from "clsx";
-import Image from "next/image";
-import leftUpArrowPath from "@/assets/icons/left-up-arrow.svg";
-import patternUrl from "@/assets/patterns/pattern.svg";
+import leftUpArrow from "@/assets/icons/left-up-arrow.svg";
+import pattern from "@/assets/patterns/pattern.svg";
 
-const HeroPattern = () => (
-  <Image
-    width={215}
-    height={197}
-    className={clsx(
-      "absolute left-0 top-0 -translate-y-1/3 -translate-x-1/3 rotate-90",
-      "md:w-[390px] md:h-[360px] md:bottom-0 md:top-auto md:translate-y-1/3 md:rotate-0"
-    )}
-    src={patternUrl}
-    alt="pattern"
-  />
-);
 const TextBox = () => {
   return (
     <motion.div
@@ -42,16 +30,28 @@ const TextBox = () => {
         text="تواصل معنا"
         href="/contact-us"
         icon={
-          <Image
-            width={10}
-            height={10}
-            className="object-contain md:w-[14px] md:h-[14px]"
-            src={leftUpArrowPath}
-            alt="up-left-arrow"
-          />
+          <div className={clsx("w-[10px] h-[10px]", "md:w-[14px] md:h-[14px]")}>
+            <img
+              className="size-full object-contain"
+              src={leftUpArrow.src}
+              alt="up-left-arrow"
+            />
+          </div>
         }
       />
-      <HeroPattern />
+
+      <div
+        className={clsx(
+          "absolute left-0 top-0 w-[215px] h-[197px] -translate-y-1/3 -translate-x-1/3 rotate-90",
+          "md:w-[390px] md:h-[360px] md:bottom-0 md:top-auto md:translate-y-1/3 md:rotate-0"
+        )}
+      >
+        <img
+          className="size-full object-contain"
+          src={pattern.src}
+          alt="pattern"
+        />
+      </div>
     </motion.div>
   );
 };
