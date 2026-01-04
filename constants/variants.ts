@@ -2,10 +2,10 @@ import { Variants } from "framer-motion";
 
 export const fadeInVarients: Variants = {
   hidden: {
-    y: 80,
+    translateY: 80,
   },
   visible: {
-    y: 0,
+    translateY: 0,
     transition: {
       duration: 2,
       ease: [0.22, 1, 0.36, 1],
