@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const fadeInVarients: Variants = {
   hidden: {
-    y: 100,
+    y: 80,
   },
   visible: {
     y: 0,

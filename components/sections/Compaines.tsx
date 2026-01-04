@@ -8,7 +8,10 @@ import { fadeInVarients, viewport } from "@/constants/variants";
 const Companies = () => {
   return (
     <section
-      className={clsx("flex flex-col pt-12 gap-16", "md:pt-24 md:gap-16")}
+      className={clsx(
+        "mx-auto container flex flex-col pt-12 gap-16",
+        "md:pt-24 md:gap-16"
+      )}
     >
       <Title text="الشركات التابعة" />
       <motion.div
@@ -16,7 +19,7 @@ const Companies = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="mx-auto container grid grid-cols-2 md:grid-cols-4 items-center"
+        className="grid grid-cols-2 md:grid-cols-4 items-center"
       >
         {companies.map(({ src, alt }, index) => (
           <div key={index} className="p-4 flex justify-center items-center">

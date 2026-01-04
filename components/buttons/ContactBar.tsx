@@ -15,7 +15,7 @@ const ContactBar = () => {
         href="tel:+966920000015"
         className={clsx("cursor-pointer", "md:hidden")}
       >
-        <div className="size-[40px]">
+        <div className="size-[35px]">
           <img
             src={callIcon.src}
             alt="call-button"
