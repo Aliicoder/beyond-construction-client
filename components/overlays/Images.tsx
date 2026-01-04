@@ -9,6 +9,7 @@ import {
 import closeIcon from "@/assets/icons/cross-white.svg";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 import clsx from "clsx";
+import { getEstateImage } from "@/lib/helpers/getEstateImg";
 
 const Images = ({
   realEstate,
@@ -32,9 +33,10 @@ const Images = ({
             <CarouselItem key={index}>
               <div className="flex items-center justify-center">
                 <img
-                  src={img.url}
+                  src={getEstateImage(img)}
                   alt={`real-estate-${index}`}
                   className="max-h-[80vh] w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             </CarouselItem>

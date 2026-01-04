@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Back from "@/components/buttons/Back";
 import RealEstateHorizontalTable from "@/components/tables/RealEstateHorizontal";
 import placeholder from "@/assets/images/placeholder.webp";
+import { getEstateImage } from "@/lib/helpers/getEstateImg";
 const RealEstate = async ({ documentId }: { documentId: string }) => {
   const realEstates = await getRealEstates();
   if (!realEstates) throw new Error("لا يوجد عقارات");
@@ -34,7 +35,7 @@ const RealEstate = async ({ documentId }: { documentId: string }) => {
             >
               <img
                 className="size-full object-cover"
-                src={realEstate?.images[0]?.url || placeholder.src}
+                src={getEstateImage(realEstate?.images[0])}
                 alt="real estate"
                 loading="lazy"
               />

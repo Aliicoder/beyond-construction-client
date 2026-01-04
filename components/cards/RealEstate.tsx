@@ -9,6 +9,7 @@ import Link from "next/link";
 import { buildingTypes } from "@/constants/realEstate";
 import placeholderImg from "@/assets/images/placeholder.webp";
 import Button from "@/components/buttons/ThreeBtn";
+import { getEstateImage } from "@/lib/helpers/getEstateImg";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;
@@ -26,7 +27,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
       <div className={clsx("relative h-[100px]", "md:h-[200px]")}>
         <img
           className="size-full object-cover"
-          src={images[0]?.url || placeholderImg.src}
+          src={getEstateImage(images[0])}
           alt="real estate"
           loading="lazy"
         />

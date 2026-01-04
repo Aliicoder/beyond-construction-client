@@ -34,12 +34,7 @@ const Masonry = () => {
               className
             )}
           >
-            <img
-              src={src}
-              alt={alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <img src={src} alt={alt} className="size-full object-cover" />
           </div>
         ))}
       </div>
