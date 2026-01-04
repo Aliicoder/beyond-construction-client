@@ -2,14 +2,12 @@ import { Variants } from "framer-motion";
 
 export const fadeInVarients: Variants = {
   hidden: {
-    opacity: 0,
-    y: 40,
+    y: 100,
   },
   visible: {
-    opacity: 1,
     y: 0,
     transition: {
-      duration: 3,
+      duration: 2,
       ease: [0.22, 1, 0.36, 1],
     },
   },

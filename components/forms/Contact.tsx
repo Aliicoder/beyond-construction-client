@@ -98,7 +98,7 @@ export default function MyForm() {
             type="submit"
             text={isSubmitting ? "جارٍ الإرسال..." : "إرسال"}
             icon={
-              <div className="w-[5px] h-[5px]">
+              <div className="size-[20px]">
                 <img
                   className="size-full object-contain"
                   src={sendMail.src}

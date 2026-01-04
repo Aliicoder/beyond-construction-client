@@ -14,7 +14,7 @@ const TextBox = () => {
       whileInView="visible"
       viewport={viewport}
       className={clsx(
-        "relative container mx-auto px-8 py-12 flex flex-col gap-8 overflow-hidden outline outline-black text-white bg-first",
+        "relative gap-8 mx-auto px-8 py-12 -mt-[100px] container flex flex-col overflow-hidden outline outline-black text-white bg-first",
         "md:rounded-md md:mt-[-250px] md:p-[100px]"
       )}
     >

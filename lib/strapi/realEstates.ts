@@ -11,6 +11,8 @@ export async function getRealEstates(): Promise<IRealEstate[]> {
       `&fields[2]=width` +
       `&fields[3]=height` +
       `&fields[4]=type` +
+      `&fields[5]=condition` +
+      `&fields[6]=city` +
       `&populate[images][fields][0]=url` +
       `&populate[images][fields][1]=formats`,
     {

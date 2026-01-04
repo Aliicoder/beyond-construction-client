@@ -1,10 +1,19 @@
-import fakeImage from "@/assets/images/real-estates/1.jpg";
 import { IRealEstate } from "@/types";
 
 export const buildingTypes = {
   building: "عمارة",
   apartment: "شقة",
   villa: "فيلا",
+  land: "أرض",
+  warehouse: "مستودع",
+};
+export const conditionTypes = {
+  sale: "للبيع",
+  rent: "للإيجار",
+};
+export const cityTypes = {
+  jeddah: "جدة",
+  riyadh: "الرياض",
 };
 export const emptyEstate: IRealEstate = {
   documentId: "",
@@ -13,5 +22,7 @@ export const emptyEstate: IRealEstate = {
   price: 0,
   width: 0,
   height: 0,
+  city: "jeddah",
+  condition: "sale",
   images: [],
 };

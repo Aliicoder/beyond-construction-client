@@ -12,7 +12,7 @@ interface SliderProps {
 const Slider = ({ data }: SliderProps) => {
   return (
     <div
-      className=" relative slider mb-[20px] overflow-hidden"
+      className="z-0 relative slider mb-[20px] overflow-hidden"
       style={
         {
           "--width": "100px",

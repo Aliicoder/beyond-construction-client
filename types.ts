@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
-type Type = "building" | "apartment" | "villa";
+type Type = "building" | "apartment" | "villa" | "warehouse" | "land";
+type City = "riyadh" | "jeddah";
+type Condition = "sale" | "rent";
 type Image = {
   url: string;
 };
@@ -11,6 +13,8 @@ export interface IRealEstate {
   price: number;
   width: number;
   height: number;
+  condition: Condition;
+  city: City;
   images: Image[];
 }
 export interface IPaginationBar {

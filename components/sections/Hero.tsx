@@ -5,7 +5,7 @@ import TextBox from "@/components/fragments/TextBox";
 const HeroImg = () => (
   <div
     className={clsx(
-      `w-full h-[200px] bg-cover border-b border-black`,
+      `w-full h-[300px] bg-cover border-b border-black`,
       "md:h-[570px]"
     )}
   >

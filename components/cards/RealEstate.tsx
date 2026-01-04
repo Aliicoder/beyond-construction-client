@@ -6,7 +6,7 @@ import crossIcon from "@/assets/icons/cross-white.svg";
 import clsx from "clsx";
 import { RealEstateProps } from "@/types";
 import Link from "next/link";
-import { buildingTypes } from "@/constants/emptyEstate";
+import { buildingTypes } from "@/constants/realEstate";
 import placeholderImg from "@/assets/images/placeholder.webp";
 import Button from "@/components/buttons/ThirdBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
@@ -39,7 +39,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           id="location"
           className="gap-2 flex items-center text-lg font-bold"
         >
-          <div className="w-[4px] h-[4px] md:size-4">
+          <div className="size-2 md:size-3">
             <img
               className="size-full object-contain"
               src={locationIcon.src}
@@ -53,7 +53,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
         </div>
         <div id="details" className={clsx("flex gap-2 opacity-70", "md:gap-4")}>
           <div className="gap-2 flex items-center">
-            <div className="size-[10px] md:size-4">
+            <div className="size-2 md:size-3">
               <img
                 className="size-full object-contain"
                 src={buildingIcon.src}
@@ -65,8 +65,12 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
             </div>
           </div>
           <div className="gap-2 flex items-center">
-            <div className="size-[7px] md:size-[10px]">
-              <img src={sizeIcon.src} alt="size-icon" />
+            <div className="size-[7px] md:size-2">
+              <img
+                className="size-full object-contain"
+                src={sizeIcon.src}
+                alt="size-icon"
+              />
             </div>
             <span
               className={clsx("gap-1 flex items-center text-xs", "md:text-sm")}
@@ -81,16 +85,16 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
         >
           <Button
             icon={
-              <div className="size-[8px]">
+              <div className="size-[8px] md:size-3">
                 <img
-                  className="size-full object-contain md:hidden"
+                  className="size-full object-contain"
                   src={crossIcon.src}
                   alt="more"
                 />
               </div>
             }
             width="fit"
-            text="احجز الآن"
+            text="احجز"
           />
 
           <div className="gap-1 p-2 flex items-center">

@@ -1,5 +1,9 @@
 "use client";
-import { buildingTypes } from "@/constants/emptyEstate";
+import {
+  buildingTypes,
+  cityTypes,
+  conditionTypes,
+} from "@/constants/realEstate";
 import { IRealEstate } from "@/types";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -42,6 +46,13 @@ const RealEstateVerticalTable = ({
           </tr>
 
           <tr>
+            <th className="px-4 py-3 bg-first text-white">الحالة</th>
+            <td className="px-4 py-3">
+              {conditionTypes[realEstate.condition]}
+            </td>
+          </tr>
+
+          <tr>
             <th className="px-4 py-3 bg-first text-white">النوع</th>
             <td className="px-4 py-3">{buildingTypes[realEstate.type]}</td>
           </tr>
@@ -59,7 +70,10 @@ const RealEstateVerticalTable = ({
               {new Number(realEstate.price).toLocaleString("en-US")}
             </td>
           </tr>
-
+          <tr>
+            <th className="px-4 py-3 bg-first text-white">المدينة</th>
+            <td className="px-4 py-3">{cityTypes[realEstate.city]}</td>
+          </tr>
           <tr>
             <th className="px-4 py-3 bg-first text-white">الموقع</th>
             <td className="px-4 py-3 truncate max-w-[20ch]">

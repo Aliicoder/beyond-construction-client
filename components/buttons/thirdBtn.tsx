@@ -12,14 +12,14 @@ const ThirdBtn = ({
   disabled,
 }: IThirdButtonProps) => {
   const className = clsx(
-    "mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
+    "gap-4 mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
     "hover:scale-95 cursor-pointer transition-all",
     `w-${width}`
   );
 
   const content = (
     <>
-      <div className="hidden md:block">{text}</div>
+      <div className="hidden mr-1 md:block">{text}</div>
       {icon}
     </>
   );

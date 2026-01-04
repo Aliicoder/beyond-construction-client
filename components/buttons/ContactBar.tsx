@@ -7,10 +7,22 @@ const ContactBar = () => {
   return (
     <div
       className={clsx(
-        "fixed gap-2 flex flex-col p-4 z-40 left-0 bottom-0",
+        "fixed gap-2 flex flex-col items-end p-4 z-40 left-0 bottom-0",
         "md:right-0"
       )}
     >
+      <Link
+        href="tel:+966920000015"
+        className={clsx("cursor-pointer", "md:hidden")}
+      >
+        <div className="size-[40px]">
+          <img
+            src={callIcon.src}
+            alt="call-button"
+            className="size-full object-contain"
+          />
+        </div>
+      </Link>
       <Link
         href="https://wa.me/966920000015"
         className={clsx("cursor-pointer")}
@@ -20,18 +32,6 @@ const ContactBar = () => {
             className="size-full object-contain"
             src={whatsappIcon.src}
             alt="whatsapp icon"
-          />
-        </div>
-      </Link>
-      <Link
-        href="tel:+966920000015"
-        className={clsx("cursor-pointer", "md:hidden")}
-      >
-        <div className="size-[35px]">
-          <img
-            src={callIcon.src}
-            alt="call-button"
-            className="size-full object-contain"
           />
         </div>
       </Link>

@@ -1,6 +1,7 @@
-import Contact from "@/components/fragments/Contact";
 import Title from "@/components/fragments/Title";
 import clsx from "clsx";
+import Form from "@/components/forms/Contact";
+import map from "@/assets/images/map.svg";
 
 const ContactUs = () => {
   return (
@@ -11,7 +12,23 @@ const ContactUs = () => {
       )}
     >
       <Title text="التواصل و الاستفسار" />
-      <Contact />
+      <div className="flex justify-center items-center">
+        <Form />
+        <div
+          className={clsx(
+            "relative hidden justify-center items-center",
+            "md:flex"
+          )}
+        >
+          <div className="move-left-right">
+            <img
+              className="size-full object-contain"
+              src={map.src}
+              alt="saudi arabia map"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
