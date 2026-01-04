@@ -5,7 +5,6 @@ import { getRealEstates } from "@/lib/strapi/realEstates";
 import clsx from "clsx";
 import Back from "@/components/buttons/Back";
 import RealEstateHorizontalTable from "@/components/tables/RealEstateHorizontal";
-import placeholder from "@/assets/images/placeholder.webp";
 import { getEstateImage } from "@/lib/helpers/getEstateImg";
 const RealEstate = async ({ documentId }: { documentId: string }) => {
   const realEstates = await getRealEstates();

@@ -1,21 +1,15 @@
-import Header from "@/components/shared/Header";
 import Hero from "@/components/sections/Hero";
 import Partners from "@/components/sections/Partners";
 import Prototypes from "@/components/sections/Prototypes";
 import Services from "@/components/sections/Services";
-import Footer from "@/components/shared/Footer";
-import Whatsapp from "@/components/buttons/ContactBar";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-second">
-      <Whatsapp />
-      <Header />
+    <>
       <Hero />
       <Partners />
       <Prototypes />
       <Services />
-      <Footer />
-    </main>
+    </>
   );
 }

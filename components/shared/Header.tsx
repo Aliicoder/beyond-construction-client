@@ -8,6 +8,7 @@ import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const breakpoint = useTailwindBreakpoint();
+
   return (
     <div className="outline outline-black bg-white">
       <div
