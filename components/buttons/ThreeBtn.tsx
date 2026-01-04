@@ -1,15 +1,15 @@
 import { IThirdButtonProps } from "@/types";
 import clsx from "clsx";
-import Link from "next/link";
+import { Link } from "lucide-react";
 
-const ThirdBtn = ({
+const ThreeBtn = ({
   text,
+  disabled,
   icon,
   href,
-  width = "full",
-  type = "submit",
+  type,
+  width,
   onClick,
-  disabled,
 }: IThirdButtonProps) => {
   const className = clsx(
     "gap-4 mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
@@ -33,15 +33,10 @@ const ThirdBtn = ({
   }
 
   return (
-    <button
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
-      className={className}
-    >
+    <button type={type} disabled={disabled} className={className}>
       {content}
     </button>
   );
 };
 
-export default ThirdBtn;
+export default ThreeBtn;

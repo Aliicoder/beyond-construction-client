@@ -8,7 +8,7 @@ import { RealEstateProps } from "@/types";
 import Link from "next/link";
 import { buildingTypes } from "@/constants/realEstate";
 import placeholderImg from "@/assets/images/placeholder.webp";
-import Button from "@/components/buttons/ThirdBtn";
+import Button from "@/components/buttons/ThreeBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;
