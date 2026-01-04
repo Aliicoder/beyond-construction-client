@@ -19,7 +19,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
       href={`/real-estates/${documentId}`}
       key={documentId}
       className={clsx(
-        "flex flex-col h-full outline rounded-sm outline-black overflow-hidden",
+        "max-w-[283px] flex flex-col h-full outline rounded-sm overflow-hidden outline-black",
         className
       )}
     >

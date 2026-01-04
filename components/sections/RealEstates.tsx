@@ -78,7 +78,8 @@ const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
   return (
     <section
       className={clsx(
-        "container mx-auto flex flex-col items-center gap-12 pt-16 md:pt-24"
+        "gap-12 pt-16 mx-auto container flex flex-col",
+        "md:pt-24"
       )}
     >
       <Title text="العقارات المتاحة" />
@@ -130,7 +131,10 @@ const RealEstates = ({ realEstates }: { realEstates: IRealEstate[] }) => {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="p-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+        className={clsx(
+          "gap-4 p-4 mx-auto grid grid-cols-2",
+          "md:grid-cols-3 lg:grid-cols-4"
+        )}
       >
         {curRealEstates.map((estate) => (
           <RealEstate key={estate.id} realEstate={estate} />

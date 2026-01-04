@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const fadeInVarients: Variants = {
   hidden: {
-    translateY: 80,
+    translateY: 100,
   },
   visible: {
     translateY: 0,
@@ -15,5 +15,5 @@ export const fadeInVarients: Variants = {
 
 export const viewport = {
   once: true,
-  amount: 0.3,
+  amount: 0.1,
 };
