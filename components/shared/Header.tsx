@@ -1,7 +1,7 @@
 "use client";
 import clsx from "clsx";
-import BurgerMenu from "@/components/fragments/BurgerMenu";
-import NavBar from "@/components/fragments/NavBar";
+import BurgerMenu from "@/components/shared/fragments/BurgerMenu";
+import NavBar from "@/components/shared/fragments/NavBar";
 import cross from "@/assets/icons/cross-brown.svg";
 import { useState } from "react";
 import { useTailwindBreakpoint } from "@/hooks/useTailwindBreakpoint";

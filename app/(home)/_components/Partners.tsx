@@ -1,4 +1,4 @@
-import Title from "@/components/fragments/Title";
+import Title from "@/components/shared/Title";
 import Slider from "@/components/sliders/Slider";
 import partenrs from "@/constants/partenrs";
 import clsx from "clsx";

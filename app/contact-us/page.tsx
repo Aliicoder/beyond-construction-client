@@ -1,5 +1,5 @@
-import FAQs from "@/components/sections/FAQs";
-import ContactUs from "@/components/sections/ContactUs";
+import ContactUs from "@/app/contact-us/_components/ContactUs";
+import FAQs from "@/app/contact-us/_components/FAQs";
 
 const page = () => {
   return (

@@ -1,4 +1,4 @@
-import RealEstate from "@/components/sections/RealEstate";
+import RealEstate from "@/app/real-estates/[documentId]/_components/RealEstate";
 const page = async ({
   params,
 }: {

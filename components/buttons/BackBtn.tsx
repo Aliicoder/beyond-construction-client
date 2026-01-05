@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import leftUpArrow from "@/assets/icons/left-up-arrow.svg";
 
-const Back = () => {
+const BackBtn = () => {
   const router = useRouter();
   return (
     <div className="py-4 px-8 container mx-auto flex items-center justify-end cursor-pointer">
@@ -20,4 +20,4 @@ const Back = () => {
   );
 };
 
-export default Back;
+export default BackBtn;

@@ -26,7 +26,7 @@ const Pattern = ({ index }: { index: number }) => {
   );
 };
 
-const Service = ({
+const Service_card = ({
   index,
   service,
   activeIndex,
@@ -73,4 +73,4 @@ const Service = ({
   );
 };
 
-export default Service;
+export default Service_card;

@@ -1,25 +1,26 @@
-import { ISecondButtonProps } from "@/types";
+import { IFourthButtonProps } from "@/types";
 import clsx from "clsx";
-import Link from "next/link";
+import { Link } from "lucide-react";
 
-const SecondBtn = ({
+const FourthBtn = ({
   text,
+  disabled,
   icon,
   href,
-  width = "full",
-  type = "submit",
+  type,
+  width,
   onClick,
-  disabled,
-}: ISecondButtonProps) => {
+}: IFourthButtonProps) => {
   const className = clsx(
-    "mt-4 px-4 py-3 pr-5 flex justify-between items-center bg-first text-white rounded-md border outline outline-black",
+    "gap-4 p-2 flex justify-center items-center outline outline-black bg-white rounded-sm border",
+    "md:rounded-md",
     "hover:scale-95 cursor-pointer transition-all",
     `w-${width}`
   );
 
   const content = (
     <>
-      <div>{text}</div>
+      {text && <div className="hidden mr-1 md:block">{text}</div>}
       {icon}
     </>
   );
@@ -34,9 +35,9 @@ const SecondBtn = ({
 
   return (
     <button
+      onClick={onClick}
       type={type}
       disabled={disabled}
-      onClick={onClick}
       className={className}
     >
       {content}
@@ -44,4 +45,4 @@ const SecondBtn = ({
   );
 };
 
-export default SecondBtn;
+export default FourthBtn;

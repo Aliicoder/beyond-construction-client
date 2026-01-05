@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
-import Title from "@/components/fragments/Title";
-import Service from "@/components/cards/Service";
+import Title from "@/components/shared/Title";
 import services from "@/constants/services";
 import { motion } from "framer-motion";
 import { fadeInVarients, viewport } from "@/constants/variants";
-// tri
+import Service_card from "@/components/cards/Service";
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
@@ -19,7 +18,7 @@ const Services = () => {
         className="flex flex-wrap"
       >
         {services.map((service, index) => (
-          <Service
+          <Service_card
             key={index}
             index={index}
             service={service}

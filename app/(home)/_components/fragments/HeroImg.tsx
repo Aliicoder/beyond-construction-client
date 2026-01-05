@@ -1,6 +1,5 @@
-import heroImg from "@/assets/images/hero-img.webp";
 import clsx from "clsx";
-import TextBox from "@/components/fragments/TextBox";
+import heroImg from "@/assets/images/hero-img.webp";
 
 const HeroImg = () => (
   <div
@@ -17,13 +16,4 @@ const HeroImg = () => (
   </div>
 );
 
-const Hero = () => {
-  return (
-    <section className="flex flex-col">
-      <HeroImg />
-      <TextBox />
-    </section>
-  );
-};
-
-export default Hero;
+export default HeroImg;

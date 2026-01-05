@@ -1,20 +1,9 @@
 import clsx from "clsx";
-import Title from "@/components/fragments/Title";
+import Title from "@/components/shared/Title";
 import socialMedia from "@/constants/socialMedia";
 import navs from "@/constants/navs";
 import Link from "next/link";
-import pattern from "@/assets/patterns/pattern.svg";
-
-const Pattern = () => (
-  <div
-    className={clsx(
-      `z-0 w-[215px] h-[197px] absolute object-contain left-0 top-0 -translate-1/3`,
-      "md:w-[390px] md:h-[360px]"
-    )}
-  >
-    <img className="size-full object-contain" src={pattern.src} alt="pattern" />
-  </div>
-);
+import Pattern from "./fragments/Pattern";
 
 const Footer = () => {
   return (

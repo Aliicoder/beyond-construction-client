@@ -9,8 +9,6 @@ const Error = ({ error }: { error: Error }) => {
   const router = useRouter();
   return (
     <main className="bg-second">
-      <Header />
-
       <div className="h-[calc(100svh-300px)] gap-4 flex flex-col items-center justify-center">
         <h1
           className={clsx(
@@ -35,8 +33,6 @@ const Error = ({ error }: { error: Error }) => {
           onClick={() => router.back()}
         />
       </div>
-
-      <Footer />
     </main>
   );
 };

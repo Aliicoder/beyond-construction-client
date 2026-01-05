@@ -1,8 +1,8 @@
 import { IThirdButtonProps } from "@/types";
 import clsx from "clsx";
-import { Link } from "lucide-react";
+import Link from "next/link";
 
-const ThreeBtn = ({
+const ThirdBtn = ({
   text,
   disabled,
   icon,
@@ -12,14 +12,15 @@ const ThreeBtn = ({
   onClick,
 }: IThirdButtonProps) => {
   const className = clsx(
-    "gap-4 mt-4 p-2 md:py-1 flex justify-center items-center outline outline-black bg-first text-white rounded-sm md:rounded-md border",
+    "gap-4 mt-4 p-2 flex justify-center items-center outline outline-black bg-first text-white rounded-sm border",
+    "md:rounded-md",
     "hover:scale-95 cursor-pointer transition-all",
     `w-${width}`
   );
 
   const content = (
     <>
-      <div className="hidden mr-1 md:block">{text}</div>
+      {text && <div className="hidden mr-1 md:block">{text}</div>}
       {icon}
     </>
   );
@@ -39,4 +40,4 @@ const ThreeBtn = ({
   );
 };
 
-export default ThreeBtn;
+export default ThirdBtn;

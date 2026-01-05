@@ -1,5 +1,5 @@
-import Title from "@/components/fragments/Title";
-import Masonry from "@/components/fragments/Masonry";
+import Title from "@/components/shared/Title";
+import Masonry from "@/app/(home)/_components/fragments/Masonry";
 import clsx from "clsx";
 
 const Prototypes = () => {

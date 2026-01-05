@@ -5,7 +5,7 @@ export const buildingTypes = {
   apartment: "شقة",
   villa: "فيلا",
   land: "أرض",
-  warehouse: "مستودع",
+  warehouse: "هنجر",
 };
 export const conditionTypes = {
   sale: "للبيع",

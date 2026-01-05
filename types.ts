@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 type Type = "building" | "apartment" | "villa" | "warehouse" | "land";
 type City = "riyadh" | "jeddah";
 type Condition = "sale" | "rent";
+
 type Image = {
   url: string;
 };
@@ -55,13 +56,23 @@ export interface TitleProps {
 }
 
 export interface IThirdButtonProps {
-  text: string;
+  text?: string;
   icon?: React.ReactNode;
   disabled?: boolean;
   href?: string;
   className?: string;
   width?: "full" | "fit";
   onClick?: () => void;
+  type?: "button" | "submit";
+}
+export interface IFourthButtonProps {
+  text?: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  href?: string;
+  className?: string;
+  width?: "full" | "fit";
+  onClick?: (e: React.MouseEvent) => void;
   type?: "button" | "submit";
 }
 export interface ISecondButtonProps {

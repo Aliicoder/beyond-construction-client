@@ -1,11 +1,12 @@
-import Title from "@/components/fragments/Title";
+import Title from "@/components/shared/Title";
 import Form from "@/components/forms/Book";
 import RealEstateVerticalTable from "@/components/tables/RealEstateVertical";
 import { getRealEstates } from "@/lib/strapi/realEstates";
 import clsx from "clsx";
-import Back from "@/components/buttons/Back";
+import BackBtn from "@/components/buttons/BackBtn";
 import RealEstateHorizontalTable from "@/components/tables/RealEstateHorizontal";
 import { getEstateImage } from "@/lib/helpers/getEstateImg";
+import ShareBtn from "@/components/buttons/ShareBtn";
 const RealEstate = async ({ documentId }: { documentId: string }) => {
   const realEstates = await getRealEstates();
   if (!realEstates) throw new Error("لا يوجد عقارات");
@@ -15,7 +16,7 @@ const RealEstate = async ({ documentId }: { documentId: string }) => {
   if (!realEstate) throw new Error("لا يوجد عقار");
   return (
     <section className={clsx("mx-auto container flex flex-col items-center")}>
-      <Back />
+      <BackBtn />
       <div className={clsx("flex flex-col items-center gap-12", "md:gap-16")}>
         <Title text="حجز العقار" />
         <div className="flex flex-col rounded-lg overflow-hidden border border-black">
@@ -32,6 +33,9 @@ const RealEstate = async ({ documentId }: { documentId: string }) => {
                 "md:h-[170px] lg:h-[545px]"
               )}
             >
+              <div className="absolute top-2 right-2 flex items-center">
+                <ShareBtn documentId={documentId} />
+              </div>
               <img
                 className="size-full object-cover"
                 src={getEstateImage(realEstate?.images[0])}

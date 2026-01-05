@@ -1,10 +1,9 @@
-import About from "@/components/sections/About";
-import Companies from "@/components/sections/Compaines";
-
+import AboutUs from "@/app/about-us/_components/AboutUs";
+import Companies from "@/app/about-us/_components/Companies";
 const page = () => {
   return (
     <>
-      <About />
+      <AboutUs />
       <Companies />
     </>
   );

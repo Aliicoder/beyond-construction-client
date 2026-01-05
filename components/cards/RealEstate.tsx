@@ -1,23 +1,20 @@
 import riyalIcon from "@/assets/icons/riyal-currency.svg";
 import locationIcon from "@/assets/icons/location.svg";
-import buildingIcon from "@/assets/icons/building.svg";
 import sizeIcon from "@/assets/icons/size.svg";
 import crossIcon from "@/assets/icons/cross-white.svg";
 import clsx from "clsx";
 import { RealEstateProps } from "@/types";
-import Link from "next/link";
 import { buildingTypes } from "@/constants/realEstate";
-import placeholderImg from "@/assets/images/placeholder.webp";
-import Button from "@/components/buttons/ThreeBtn";
 import { getEstateImage } from "@/lib/helpers/getEstateImg";
+import buildingIcon from "@/assets/icons/building.svg";
+import Third_btn from "@/components/buttons/ThirdBtn";
+import ShareBtn from "@/components/buttons/ShareBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
   const { documentId, location, type, price, width, height, images } =
     realEstate;
 
   return (
-    <Link
-      scroll={false}
-      href={`/real-estates/${documentId}`}
+    <div
       key={documentId}
       className={clsx(
         "max-w-[283px] flex flex-col h-full outline rounded-sm overflow-hidden outline-black",
@@ -25,6 +22,9 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
       )}
     >
       <div className={clsx("relative h-[100px]", "md:h-[200px]")}>
+        <div className="absolute top-2 right-2 flex items-center">
+          <ShareBtn documentId={documentId} />
+        </div>
         <img
           className="size-full object-cover"
           src={getEstateImage(images[0])}
@@ -53,12 +53,12 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           </div>
         </div>
         <div id="details" className={clsx("flex gap-2 opacity-70", "md:gap-4")}>
-          <div className="gap-2 flex items-center">
-            <div className="size-2 md:size-3">
+          <div className="gap-2 flex items-center relative">
+            <div className="size-[7px] md:size-3">
               <img
                 className="size-full object-contain"
                 src={buildingIcon.src}
-                alt="building type icon"
+                alt="size-icon"
               />
             </div>
             <div className={clsx("text-xs", "md:text-sm")}>
@@ -84,7 +84,8 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           id="foot"
           className={clsx("flex justify-between items-end", "md:mt-4")}
         >
-          <Button
+          <Third_btn
+            href={`/real-estates/${documentId}`}
             icon={
               <div className="size-[8px] md:size-3">
                 <img
@@ -95,7 +96,6 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
               </div>
             }
             width="fit"
-            text="احجز"
           />
 
           <div className="gap-1 p-2 flex items-center">
@@ -112,7 +112,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

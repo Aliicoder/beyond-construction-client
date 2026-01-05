@@ -1,4 +1,4 @@
-import Title from "@/components/fragments/Title";
+import Title from "@/components/shared/Title";
 import clsx from "clsx";
 import Form from "@/components/forms/Contact";
 import map from "@/assets/images/map.svg";
