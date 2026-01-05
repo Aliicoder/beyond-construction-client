@@ -3,11 +3,17 @@ import Form from "@/components/forms/Book";
 import RealEstateVerticalTable from "@/components/tables/RealEstateVertical";
 import { getRealEstates } from "@/lib/strapi/realEstates";
 import clsx from "clsx";
-import BackBtn from "@/components/buttons/BackBtn";
 import RealEstateHorizontalTable from "@/components/tables/RealEstateHorizontal";
 import { getEstateImage } from "@/lib/helpers/getEstateImg";
 import ShareBtn from "@/components/buttons/ShareBtn";
-const RealEstate = async ({ documentId }: { documentId: string }) => {
+
+const RealEstate = async ({
+  documentId,
+  GoBack,
+}: {
+  documentId: string;
+  GoBack: React.ReactNode;
+}) => {
   const realEstates = await getRealEstates();
   if (!realEstates) throw new Error("لا يوجد عقارات");
   const realEstate = realEstates.find(
@@ -16,7 +22,7 @@ const RealEstate = async ({ documentId }: { documentId: string }) => {
   if (!realEstate) throw new Error("لا يوجد عقار");
   return (
     <section className={clsx("mx-auto container flex flex-col items-center")}>
-      <BackBtn />
+      {GoBack}
       <div className={clsx("flex flex-col items-center gap-12", "md:gap-16")}>
         <Title text="حجز العقار" />
         <div className="flex flex-col rounded-lg overflow-hidden border border-black">

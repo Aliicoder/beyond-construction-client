@@ -23,7 +23,7 @@ const Images = ({
     <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
       <button
         onClick={() => setShowImages(false)}
-        className="absolute top-6 right-6 z-50"
+        className="absolute top-6 right-6"
       >
         <img className="rotate-45" src={closeIcon.src} alt="cross-icon" />
       </button>

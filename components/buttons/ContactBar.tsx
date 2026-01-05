@@ -7,7 +7,7 @@ const ContactBar = () => {
   return (
     <div
       className={clsx(
-        "fixed gap-2 flex flex-col items-end p-4 z-40 left-0 bottom-0",
+        "fixed gap-2 flex flex-col items-end p-4 z-30 left-0 bottom-0",
         "md:right-0"
       )}
     >
@@ -19,7 +19,7 @@ const ContactBar = () => {
           <img
             src={callIcon.src}
             alt="call-button"
-            className="size-full object-contain"
+            className="size-full object-contain drop-shadow-lg"
           />
         </div>
       </Link>
@@ -29,7 +29,7 @@ const ContactBar = () => {
       >
         <div className="size-[40px]">
           <img
-            className="size-full object-contain"
+            className="size-full object-contain drop-shadow-sm"
             src={whatsappIcon.src}
             alt="whatsapp icon"
           />
