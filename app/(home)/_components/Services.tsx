@@ -15,7 +15,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="flex flex-wrap"
+        className="flex flex-wrap group"
       >
         {services.map((service, index) => (
           <Service_card

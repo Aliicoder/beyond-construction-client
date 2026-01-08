@@ -10,8 +10,7 @@ import buildingIcon from "@/assets/icons/building.svg";
 import Third_btn from "@/components/buttons/ThirdBtn";
 import ShareBtn from "@/components/buttons/ShareBtn";
 const RealEstate = ({ realEstate, className }: RealEstateProps) => {
-  const { documentId, location, type, price, width, height, images } =
-    realEstate;
+  const { documentId, location, type, price, size, images } = realEstate;
 
   return (
     <div
@@ -76,7 +75,7 @@ const RealEstate = ({ realEstate, className }: RealEstateProps) => {
             <span
               className={clsx("gap-1 flex items-center text-xs", "md:text-sm")}
             >
-              {width} <span>x</span> {height}
+              {size}
             </span>
           </div>
         </div>

@@ -35,51 +35,60 @@ const RealEstateVerticalTable = ({
         )}
       >
         <tbody className="divide-y">
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">الصور</th>
-            <td
-              onClick={() => setShowImages(true)}
-              className="px-4 py-3 underline cursor-pointer text-green-600"
-            >
-              عرض الصور ({realEstate.images.length})
-            </td>
-          </tr>
+          {realEstate.images[0] && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">الصور</th>
+              <td
+                onClick={() => setShowImages(true)}
+                className="px-4 py-3 underline cursor-pointer text-green-600"
+              >
+                عرض الصور ({realEstate.images.length})
+              </td>
+            </tr>
+          )}
 
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">الحالة</th>
-            <td className="px-4 py-3">
-              {conditionTypes[realEstate.condition]}
-            </td>
-          </tr>
-
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">النوع</th>
-            <td className="px-4 py-3">{buildingTypes[realEstate.type]}</td>
-          </tr>
-
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">المساحة</th>
-            <td className="px-4 py-3">
-              {realEstate.width} × {realEstate.height}
-            </td>
-          </tr>
-
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">السعر</th>
-            <td className="px-4 py-3 font-semibold">
-              {new Number(realEstate.price).toLocaleString("en-US")}
-            </td>
-          </tr>
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">المدينة</th>
-            <td className="px-4 py-3">{cityTypes[realEstate.city]}</td>
-          </tr>
-          <tr>
-            <th className="px-4 py-3 bg-first text-white">الموقع</th>
-            <td className="px-4 py-3 truncate max-w-[20ch]">
-              {realEstate.location}
-            </td>
-          </tr>
+          {realEstate.condition && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">الحالة</th>
+              <td className="px-4 py-3">
+                {conditionTypes[realEstate.condition]}
+              </td>
+            </tr>
+          )}
+          {realEstate.type && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">النوع</th>
+              <td className="px-4 py-3">{buildingTypes[realEstate.type]}</td>
+            </tr>
+          )}
+          {realEstate.size && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">المساحة</th>
+              <td className="px-4 py-3">{realEstate.size}</td>
+            </tr>
+          )}
+          {realEstate.price && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">السعر</th>
+              <td className="px-4 py-3 font-semibold">
+                {new Number(realEstate.price).toLocaleString("en-US")}
+              </td>
+            </tr>
+          )}
+          {realEstate.city && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">المدينة</th>
+              <td className="px-4 py-3">{cityTypes[realEstate.city]}</td>
+            </tr>
+          )}
+          {realEstate.location && (
+            <tr>
+              <th className="px-4 py-3 bg-first text-white">الموقع</th>
+              <td className="px-4 py-3 truncate max-w-[20ch]">
+                {realEstate.location}
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </>

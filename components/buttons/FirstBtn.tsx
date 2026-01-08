@@ -2,15 +2,34 @@ import clsx from "clsx";
 import Link from "next/link";
 import { IFirstButtonProps } from "@/types";
 
-const FirstBtn = ({ text, icon, href, onClick }: IFirstButtonProps) => {
+const FirstBtn = ({
+  width = "fit",
+  fashion = "normal",
+  text,
+  icon,
+  href,
+  onClick,
+  justify = "between",
+}: IFirstButtonProps) => {
   const classes = clsx(
-    "mt-4 gap-6 pl-6 py-4 pr-8 flex justify-between items-center outline outline-black rounded-md cursor-pointer transition-all",
-    "bg-white text-black hover:scale-95 md:w-fit border border"
+    "gap-6 px-5 py-3 w-full flex justify-between items-center border rounded-md cursor-pointer transition-all",
+    "hover:scale-95 md:w-fit",
+    fashion === "normal"
+      ? "bg-white text-black"
+      : "text-white outline outline-white",
+    `justify-${justify}`
   );
 
   const content = (
     <>
-      <div className={clsx("text-sm font-bold md:text-lg")}>{text}</div>
+      <div
+        className={clsx(
+          "text-sm font-bold md:text-lg",
+          justify === "center" ? "pr-0" : "pr-2"
+        )}
+      >
+        {text}
+      </div>
       {icon}
     </>
   );

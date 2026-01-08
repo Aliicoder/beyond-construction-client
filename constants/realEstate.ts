@@ -1,12 +1,16 @@
 import { IRealEstate } from "@/types";
 
 export const buildingTypes = {
-  building: "عمارة",
   apartment: "شقة",
+  floor: "دور",
+  shop: "محل",
+  showroom: "معرض",
+  office: "مكتب",
   villa: "فيلا",
-  land: "أرض",
   warehouse: "هنجر",
+  workshop: "ورشة",
 };
+
 export const conditionTypes = {
   sale: "للبيع",
   rent: "للإيجار",
@@ -18,11 +22,11 @@ export const cityTypes = {
 export const emptyEstate: IRealEstate = {
   documentId: "",
   location: "",
-  type: "building",
+  type: "apartment",
   price: 0,
-  width: 0,
-  height: 0,
+  size: 0,
   city: "jeddah",
   condition: "sale",
   images: [],
+  license_number: "",
 };

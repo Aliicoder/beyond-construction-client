@@ -10,9 +10,10 @@ import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/SecondBtn";
 import formSchema from "@/lib/validations/book";
 import clsx from "clsx";
-import bookingIcon from "@/assets/icons/booking.svg";
 import { useState } from "react";
 import { createBooking } from "@/lib/strapi/bookings";
+import whatsappIcon from "@/assets/icons/socialMedia/whatsapp.svg";
+import send from "@/assets/icons/send.svg";
 
 export default function MyForm({ documentId }: { documentId: string }) {
   const [locked, setLocked] = useState(false);
@@ -65,11 +66,6 @@ export default function MyForm({ documentId }: { documentId: string }) {
         </Field>
 
         <Field>
-          <FieldLabel htmlFor="email">البريد الالكتروني</FieldLabel>
-          <Input {...form.register("email")} />
-        </Field>
-
-        <Field>
           <FieldLabel htmlFor="phone">الهاتف</FieldLabel>
           <Input
             className="text-right"
@@ -82,27 +78,45 @@ export default function MyForm({ documentId }: { documentId: string }) {
           <FieldLabel htmlFor="message">الرسالة</FieldLabel>
           <Textarea {...form.register("message")} />
         </Field>
-
-        {locked ? (
-          <div className="text-sm text-center text-green-600">
-            تم إرسال الطلب بنجاح
+        <div className="gap-4 mb-4 flex flex-col">
+          {locked ? (
+            <div className="text-sm text-center text-green-600">
+              تم إرسال الطلب بنجاح
+            </div>
+          ) : (
+            <Button
+              type="submit"
+              text={isSubmitting ? "جارٍ الإرسال..." : "ارسال طلب "}
+              icon={
+                <div className="w-[15px] h-[15px]">
+                  <img
+                    className="size-full object-contain"
+                    src={send.src}
+                    alt="احجز"
+                  />
+                </div>
+              }
+              disabled={isSubmitting}
+            />
+          )}
+          <div className="relative flex justify-center">
+            <div className="left-0 top-1/2 absolute z-0 h-[0.5px] bg-gray-300 w-full" />
+            <div className="z-10 bg-white px-3 text-sm md:text-base">او</div>
           </div>
-        ) : (
           <Button
-            type="submit"
-            text={isSubmitting ? "جارٍ الإرسال..." : "احجز "}
+            text={"حجز مباشر"}
             icon={
-              <div className="w-[15px] h-[15px]">
+              <div className="size-[20px]">
                 <img
                   className="size-full object-contain"
-                  src={bookingIcon.src}
-                  alt="احجز"
+                  src={whatsappIcon.src}
+                  alt="حجز مباشر"
                 />
               </div>
             }
             disabled={isSubmitting}
           />
-        )}
+        </div>
       </form>
     </Form>
   );

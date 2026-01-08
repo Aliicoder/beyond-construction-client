@@ -26,19 +26,31 @@ const TextBox = () => {
         خلال دراسة السوق العقاري في المملكة العربية السعودية وتلبية الاحتياجات
         التي تساعد في تطوير النشاط العقاري.
       </h1>
-      <Button
-        text="تواصل معنا"
-        href="/contact-us"
-        icon={
-          <div className={clsx("w-[10px] h-[10px]", "md:w-[14px] md:h-[14px]")}>
-            <img
-              className="size-full object-contain"
-              src={leftUpArrow.src}
-              alt="up-left-arrow"
-            />
-          </div>
-        }
-      />
+      <div className="gap-8 flex flex-wrap-reverse">
+        <Button
+          fashion="outline"
+          justify="center"
+          width="full"
+          text="تواصل معنا"
+          href="/contact-us"
+        />
+        <Button
+          width="full"
+          text="عرض العقارات"
+          href="/real-estates"
+          icon={
+            <div
+              className={clsx("w-[10px] h-[10px]", "md:w-[14px] md:h-[14px]")}
+            >
+              <img
+                className="size-full object-contain"
+                src={leftUpArrow.src}
+                alt="up-left-arrow"
+              />
+            </div>
+          }
+        />
+      </div>
 
       <div
         className={clsx(

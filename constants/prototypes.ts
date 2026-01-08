@@ -59,7 +59,7 @@ export default [
     alt: "Prototype-6",
     heights: {
       small: 0,
-      large: 347,
+      large: 335,
     },
     className: "hidden",
   },

@@ -12,7 +12,7 @@ const Pattern = ({ index }: { index: number }) => {
     <div
       style={{ transform: `rotate(${rotate}deg)` }}
       className={clsx(
-        `z-0 absolute w-[215px] h-[360px] left-0 top-0 -translate-1/2`,
+        `z-0 absolute w-[215px] h-[360px] left-0 top-0 -translate-1/2 `,
         "md:w-[390px] md:h-[360]",
         isEven && "left-full"
       )}
@@ -26,7 +26,7 @@ const Pattern = ({ index }: { index: number }) => {
   );
 };
 
-const Service_card = ({
+const Service = ({
   index,
   service,
   activeIndex,
@@ -34,11 +34,13 @@ const Service_card = ({
 }: IServiceProps) => {
   let breakpoint = useTailwindBreakpoint();
   return (
-    <div className={clsx("p-4 w-full", "md:w-1/2")}>
+    <div className={clsx("p-4 w-full cursor-pointer", "md:w-1/2")}>
       <div
         onClick={() => setActiveIndex(index)}
         className={clsx(
-          "relative flex flex-col rounded-md overflow-hidden bg-first text-white outline outline-black"
+          "relative flex flex-col rounded-md overflow-hidden bg-first text-white outline outline-black",
+          "md:group-hover:opacity-75",
+          "md:hover:opacity-100 md:hover:scale-105 transition-all duration-300"
         )}
       >
         <div className="z-10 p-8  flex justify-between items-center">
@@ -73,4 +75,4 @@ const Service_card = ({
   );
 };
 
-export default Service_card;
+export default Service;

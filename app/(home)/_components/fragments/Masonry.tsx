@@ -7,6 +7,7 @@ import { fadeInVarients, viewport } from "@/constants/variants";
 const Masonry = () => {
   return (
     <motion.div
+      dir="ltr"
       variants={fadeInVarients}
       initial="hidden"
       whileInView="visible"
@@ -31,6 +32,7 @@ const Masonry = () => {
             className={clsx(
               "w-full h-(--small-height) mb-8 break-inside-avoid rounded-md border overflow-hidden border-black",
               "md:mb-16 md:block md:h-(--large-height)",
+              "md:hover:scale-105 transition-all duration-300",
               className
             )}
           >

@@ -32,30 +32,49 @@ const Content = ({ realEstates }: { realEstates: any[] }) => {
         setPage={setPage}
       />
 
-      <motion.div
-        variants={fadeInVarients}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        className={clsx(
-          "gap-4 p-4 mx-auto grid grid-cols-2",
-          "md:grid-cols-3 lg:grid-cols-4"
-        )}
-      >
-        {curRealEstates.map((estate) => (
-          <RealEstate key={estate.id} realEstate={estate} />
-        ))}
-        {/* fill empty cards to keep grid shape */}
-        {Array.from({
-          length: perPage - curRealEstates.length,
-        }).map((_, index) => (
-          <RealEstateCard
-            key={`placeholder-${page}-${index}`}
-            className="invisible pointer-events-none"
-            realEstate={emptyEstate}
-          />
-        ))}
-      </motion.div>
+      {curRealEstates.length > 0 ? (
+        <motion.div
+          variants={fadeInVarients}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className={clsx(
+            "gap-4 p-4 mx-auto grid grid-cols-2",
+            "md:grid-cols-3 lg:grid-cols-4"
+          )}
+        >
+          {curRealEstates.map((estate) => (
+            <RealEstate key={estate.id} realEstate={estate} />
+          ))}
+        </motion.div>
+      ) : (
+        <div className="flex flex-col items-center">
+          <div className="p-8 text-balance text-center">
+            لا توجد عقارات مطابقة لمعايير البحث
+          </div>
+          <motion.div
+            variants={fadeInVarients}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className={clsx(
+              "gap-4 p-4 mx-auto grid grid-cols-2",
+              "md:grid-cols-3 lg:grid-cols-4"
+            )}
+          >
+            {/* fill empty cards to keep grid shape */}
+            {Array.from({
+              length: Math.min(perPage - (curRealEstates?.length || 0), 4),
+            }).map((_, index) => (
+              <RealEstateCard
+                key={`placeholder-${page}-${index}`}
+                className="invisible pointer-events-none"
+                realEstate={emptyEstate}
+              />
+            ))}
+          </motion.div>
+        </div>
+      )}
 
       <PaginationBar page={page} totalPages={totalPages} setPage={setPage} />
     </>

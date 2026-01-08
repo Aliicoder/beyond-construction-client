@@ -5,6 +5,7 @@ import Link from "next/link";
 const SecondBtn = ({
   text,
   icon,
+  fashion = "normal",
   href,
   width = "full",
   type = "submit",
@@ -12,8 +13,11 @@ const SecondBtn = ({
   disabled,
 }: ISecondButtonProps) => {
   const className = clsx(
-    "mt-4 px-4 py-3 pr-5 flex justify-between items-center bg-first text-white rounded-md border outline outline-black",
+    "px-4 py-3 pr-5 flex justify-between items-center rounded-md border ",
     "hover:scale-95 cursor-pointer transition-all",
+    fashion === "normal"
+      ? "bg-first text-white"
+      : "bg-white text-black outline outline-black",
     `w-${width}`
   );
 

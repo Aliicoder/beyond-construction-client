@@ -1,6 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 
-type Type = "building" | "apartment" | "villa" | "warehouse" | "land";
+type Type =
+  | "apartment"
+  | "floor"
+  | "shop"
+  | "showroom"
+  | "office"
+  | "villa"
+  | "warehouse"
+  | "workshop";
 type City = "riyadh" | "jeddah";
 type Condition = "sale" | "rent";
 
@@ -9,14 +17,16 @@ type Image = {
 };
 export interface IRealEstate {
   documentId: string;
+  license_number: string;
   location: string;
   type: Type;
   price: number;
-  width: number;
-  height: number;
+  size: number;
   condition: Condition;
   city: City;
   images: Image[];
+  description?: string;
+  youtube_video?: string;
 }
 export interface IPaginationBar {
   page: number;
@@ -79,6 +89,7 @@ export interface ISecondButtonProps {
   text: string;
   icon?: React.ReactNode;
   disabled?: boolean;
+  fashion?: "normal" | "outline";
   href?: string;
   className?: string;
   width?: "full" | "fit";
@@ -87,10 +98,13 @@ export interface ISecondButtonProps {
 }
 
 export interface IFirstButtonProps {
+  width?: "full" | "fit";
+  fashion?: "normal" | "outline";
   text: string;
   icon?: React.ReactNode;
   className?: string;
   textClassName?: string;
   href?: string;
   onClick?: () => void;
+  justify?: "between" | "center";
 }

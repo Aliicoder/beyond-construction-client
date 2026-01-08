@@ -8,11 +8,10 @@ export async function getRealEstates(): Promise<IRealEstate[]> {
     `${baseUrl}/api/real-estates` +
       `?fields[0]=location` +
       `&fields[1]=price` +
-      `&fields[2]=width` +
-      `&fields[3]=height` +
-      `&fields[4]=type` +
-      `&fields[5]=condition` +
-      `&fields[6]=city` +
+      `&fields[2]=size` +
+      `&fields[3]=type` +
+      `&fields[4]=condition` +
+      `&fields[5]=city` +
       `&populate[images][fields][0]=url` +
       `&populate[images][fields][1]=formats`,
     {

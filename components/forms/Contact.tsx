@@ -10,7 +10,7 @@ import { Form } from "@/components/ui/form";
 import Button from "@/components/buttons/SecondBtn";
 import formSchema from "@/lib/validations/contact";
 import clsx from "clsx";
-import sendMail from "@/assets/icons/sendMail.svg";
+import send from "@/assets/icons/send.svg";
 import { createMessage } from "@/lib/strapi/messages";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -71,11 +71,6 @@ export default function MyForm() {
         </Field>
 
         <Field>
-          <FieldLabel htmlFor="email">البريد الالكتروني</FieldLabel>
-          <Input {...form.register("email")} />
-        </Field>
-
-        <Field>
           <FieldLabel htmlFor="phone">الهاتف</FieldLabel>
           <Input
             type="tel"
@@ -101,7 +96,7 @@ export default function MyForm() {
               <div className="size-[20px]">
                 <img
                   className="size-full object-contain"
-                  src={sendMail.src}
+                  src={send.src}
                   alt="إرسال"
                 />
               </div>

@@ -21,8 +21,10 @@ const BurgerMenu = ({
     <ul
       className={clsx(
         "max-h-0 gap-8 flex flex-col items-center text-white bg-first",
-        "transition-all ease-in-out duration-700 ",
-        isOpen && breakpoint !== "md" && "max-h-[400px] p-8"
+        "transition-all ease-in-out duration-700 pointer-events-none opacity-0",
+        isOpen &&
+          breakpoint !== "md" &&
+          "max-h-[400px] p-8 opacity-1 pointer-events-auto"
       )}
     >
       {navs.map((nav) => {
