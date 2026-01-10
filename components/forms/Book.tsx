@@ -14,11 +14,16 @@ import { useState } from "react";
 import { createBooking } from "@/lib/strapi/bookings";
 import whatsappIcon from "@/assets/icons/socialMedia/whatsapp.svg";
 import send from "@/assets/icons/send.svg";
+import { IRealEstate } from "@/types";
+import { handleWhatsapp } from "@/lib/helpers/whatsappBooking";
 
-export default function MyForm({ documentId }: { documentId: string }) {
+export default function MyForm({ realEstate }: { realEstate: IRealEstate }) {
   const [locked, setLocked] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      real_estate: realEstate.documentId,
+    },
   });
   const {
     handleSubmit,
@@ -48,6 +53,7 @@ export default function MyForm({ documentId }: { documentId: string }) {
   return (
     <Form {...form}>
       <form
+        id="book-form"
         onSubmit={handleSubmit(onSubmit, onError)}
         className={clsx(
           "w-full md:max-w-[329px] py-7 px-5 space-y-8",
@@ -55,11 +61,6 @@ export default function MyForm({ documentId }: { documentId: string }) {
           locked && "opacity-50 pointer-events-none"
         )}
       >
-        <input
-          type="hidden"
-          {...form.register("real_estate")}
-          value={documentId}
-        />
         <Field>
           <FieldLabel htmlFor="name">الاسم</FieldLabel>
           <Input type="text" {...form.register("name")} />
@@ -104,7 +105,9 @@ export default function MyForm({ documentId }: { documentId: string }) {
             <div className="z-10 bg-white px-3 text-sm md:text-base">او</div>
           </div>
           <Button
+            type="button"
             text={"حجز مباشر"}
+            onClick={() => handleWhatsapp({ realEstate })}
             icon={
               <div className="size-[20px]">
                 <img
@@ -114,7 +117,6 @@ export default function MyForm({ documentId }: { documentId: string }) {
                 />
               </div>
             }
-            disabled={isSubmitting}
           />
         </div>
       </form>

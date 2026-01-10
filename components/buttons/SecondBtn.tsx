@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 
 const SecondBtn = ({
+  form,
   text,
   icon,
   fashion = "normal",
@@ -38,6 +39,7 @@ const SecondBtn = ({
 
   return (
     <button
+      form={form}
       type={type}
       disabled={disabled}
       onClick={onClick}

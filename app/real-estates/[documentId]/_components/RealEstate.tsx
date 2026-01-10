@@ -32,7 +32,7 @@ const RealEstate = async ({
               "lg:flex-row"
             )}
           >
-            <Form documentId={realEstate.documentId} />
+            <Form realEstate={realEstate} />
             <div
               className={clsx(
                 "relative h-[150px]",

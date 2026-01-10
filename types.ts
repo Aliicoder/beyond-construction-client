@@ -87,6 +87,7 @@ export interface IFourthButtonProps {
 }
 export interface ISecondButtonProps {
   text: string;
+  form?: string;
   icon?: React.ReactNode;
   disabled?: boolean;
   fashion?: "normal" | "outline";
