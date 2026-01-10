@@ -17,7 +17,7 @@ export const handleWhatsapp = ({ realEstate }: { realEstate: IRealEstate }) => {
 ${window.location.href}
   `.trim();
 
-  const phone = "9163";
+  const phone = "916366313572";
 
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
